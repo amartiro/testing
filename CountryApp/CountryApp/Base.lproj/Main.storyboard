@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -215,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8y7-ig-u5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2352.8000000000002" y="525.78710644677665"/>
+            <point key="canvasLocation" x="2324" y="590"/>
         </scene>
         <!--Regions View Controller-->
         <scene sceneID="QkC-SV-aQ3">
@@ -303,10 +303,10 @@
             </objects>
             <point key="canvasLocation" x="1818" y="-215"/>
         </scene>
-        <!--Split View Controller-->
+        <!--Custom Split View Controller-->
         <scene sceneID="E1i-12-TOo">
             <objects>
-                <splitViewController id="wSH-Cj-zXX" sceneMemberID="viewController">
+                <splitViewController id="wSH-Cj-zXX" customClass="CustomSplitViewController" sceneMemberID="viewController">
                     <connections>
                         <segue destination="Ts2-hc-ajH" kind="relationship" relationship="masterViewController" id="yeE-2l-iah"/>
                         <segue destination="fD3-eu-HTG" kind="relationship" relationship="detailViewController" id="Qry-hF-ctc"/>
@@ -334,6 +334,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Qry-hF-ctc"/>
+        <segue reference="MsA-ac-zH4"/>
     </inferredMetricsTieBreakers>
 </document>

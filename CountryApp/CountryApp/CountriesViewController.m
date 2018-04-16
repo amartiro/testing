@@ -30,7 +30,7 @@
     UINib *cellNib = [UINib nibWithNibName:@"CountryTableViewCell" bundle:nil];
 
     [self.countriesTableView registerNib:cellNib forCellReuseIdentifier:@"CountryTableViewCell"];
-    
+    self.countriesTableView.tableFooterView = [[UIView alloc] init];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor purpleColor];
     
