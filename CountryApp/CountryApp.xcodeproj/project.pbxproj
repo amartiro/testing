@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE0414472060FB3B00D88DA3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0414462060FB3B00D88DA3 /* AppDelegate.m */; };
-		CE04144A2060FB3B00D88DA3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0414492060FB3B00D88DA3 /* ViewController.m */; };
+		CE04144A2060FB3B00D88DA3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0414492060FB3B00D88DA3 /* LoginViewController.m */; };
 		CE04144D2060FB3B00D88DA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE04144B2060FB3B00D88DA3 /* Main.storyboard */; };
 		CE0414502060FB3B00D88DA3 /* CountryApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE04144E2060FB3B00D88DA3 /* CountryApp.xcdatamodeld */; };
 		CE0414522060FB3B00D88DA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0414512060FB3B00D88DA3 /* Assets.xcassets */; };
@@ -18,7 +18,6 @@
 		CE04146D2060FB3C00D88DA3 /* CountryAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE04146C2060FB3C00D88DA3 /* CountryAppUITests.m */; };
 		CE04147C2062833B00D88DA3 /* CountriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE04147B2062833B00D88DA3 /* CountriesViewController.m */; };
 		CE04147F206286E400D88DA3 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE04147E206286E400D88DA3 /* DetailsViewController.m */; };
-		CE0414842062A1AF00D88DA3 /* EnglandFlagEmoji.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE0414832062A1AE00D88DA3 /* EnglandFlagEmoji.jpg */; };
 		CE0414882062A51C00D88DA3 /* CountryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0414862062A51C00D88DA3 /* CountryTableViewCell.m */; };
 		CE0414892062A51C00D88DA3 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0414872062A51C00D88DA3 /* CountryTableViewCell.xib */; };
 		CE04148C2063EAB300D88DA3 /* RegionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE04148B2063EAB300D88DA3 /* RegionsViewController.m */; };
@@ -52,8 +51,8 @@
 		CE0414422060FB3B00D88DA3 /* CountryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0414452060FB3B00D88DA3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE0414462060FB3B00D88DA3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CE0414482060FB3B00D88DA3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CE0414492060FB3B00D88DA3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CE0414482060FB3B00D88DA3 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		CE0414492060FB3B00D88DA3 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		CE04144C2060FB3B00D88DA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE04144F2060FB3B00D88DA3 /* CountryApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CountryApp.xcdatamodel; sourceTree = "<group>"; };
 		CE0414512060FB3B00D88DA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,7 +69,6 @@
 		CE04147B2062833B00D88DA3 /* CountriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountriesViewController.m; sourceTree = "<group>"; };
 		CE04147D206286E400D88DA3 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		CE04147E206286E400D88DA3 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
-		CE0414832062A1AE00D88DA3 /* EnglandFlagEmoji.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EnglandFlagEmoji.jpg; sourceTree = "<group>"; };
 		CE0414852062A51C00D88DA3 /* CountryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountryTableViewCell.h; sourceTree = "<group>"; };
 		CE0414862062A51C00D88DA3 /* CountryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountryTableViewCell.m; sourceTree = "<group>"; };
 		CE0414872062A51C00D88DA3 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
@@ -157,30 +155,25 @@
 			isa = PBXGroup;
 			children = (
 				CE041492206520F500D88DA3 /* Objects */,
-				CE0414832062A1AE00D88DA3 /* EnglandFlagEmoji.jpg */,
 				CE0414452060FB3B00D88DA3 /* AppDelegate.h */,
 				CE0414462060FB3B00D88DA3 /* AppDelegate.m */,
-				CE0414482060FB3B00D88DA3 /* ViewController.h */,
-				CE0414492060FB3B00D88DA3 /* ViewController.m */,
+				CE0414482060FB3B00D88DA3 /* LoginViewController.h */,
+				CE0414492060FB3B00D88DA3 /* LoginViewController.m */,
 				CE04147A2062833B00D88DA3 /* CountriesViewController.h */,
 				CE04147B2062833B00D88DA3 /* CountriesViewController.m */,
-				CE04144B2060FB3B00D88DA3 /* Main.storyboard */,
+				CE04147D206286E400D88DA3 /* DetailsViewController.h */,
+				CE04147E206286E400D88DA3 /* DetailsViewController.m */,
+				CE04148A2063EAB300D88DA3 /* RegionsViewController.h */,
+				CE04148B2063EAB300D88DA3 /* RegionsViewController.m */,
+				E791A7302091CD4000D1A958 /* CustomSplitViewController */,
 				CE0414512060FB3B00D88DA3 /* Assets.xcassets */,
+				CE04144B2060FB3B00D88DA3 /* Main.storyboard */,
 				CE0414532060FB3B00D88DA3 /* LaunchScreen.storyboard */,
 				CE0414562060FB3B00D88DA3 /* Info.plist */,
 				CE0414572060FB3B00D88DA3 /* main.m */,
 				CE04144E2060FB3B00D88DA3 /* CountryApp.xcdatamodeld */,
-				CE04147D206286E400D88DA3 /* DetailsViewController.h */,
-				CE04147E206286E400D88DA3 /* DetailsViewController.m */,
-				CE0414852062A51C00D88DA3 /* CountryTableViewCell.h */,
-				CE0414862062A51C00D88DA3 /* CountryTableViewCell.m */,
-				CE0414872062A51C00D88DA3 /* CountryTableViewCell.xib */,
-				CE04148A2063EAB300D88DA3 /* RegionsViewController.h */,
-				CE04148B2063EAB300D88DA3 /* RegionsViewController.m */,
-				CE04148D2065043900D88DA3 /* NetworkManager.h */,
-				CE04148E2065043900D88DA3 /* NetworkManager.m */,
-				E79333BB207B836F00201D60 /* CustomSplitViewController.h */,
-				E79333BC207B836F00201D60 /* CustomSplitViewController.m */,
+				E791A72E2091BB8400D1A958 /* TableCell */,
+				E791A72F2091CD1D00D1A958 /* NetworkManager */,
 			);
 			path = CountryApp;
 			sourceTree = "<group>";
@@ -210,6 +203,34 @@
 				CE0414942065210A00D88DA3 /* Country.m */,
 			);
 			path = Objects;
+			sourceTree = "<group>";
+		};
+		E791A72E2091BB8400D1A958 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				CE0414852062A51C00D88DA3 /* CountryTableViewCell.h */,
+				CE0414862062A51C00D88DA3 /* CountryTableViewCell.m */,
+				CE0414872062A51C00D88DA3 /* CountryTableViewCell.xib */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
+		E791A72F2091CD1D00D1A958 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				CE04148D2065043900D88DA3 /* NetworkManager.h */,
+				CE04148E2065043900D88DA3 /* NetworkManager.m */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		E791A7302091CD4000D1A958 /* CustomSplitViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E79333BB207B836F00201D60 /* CustomSplitViewController.h */,
+				E79333BC207B836F00201D60 /* CustomSplitViewController.m */,
+			);
+			path = CustomSplitViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,7 +344,6 @@
 			files = (
 				CE0414552060FB3B00D88DA3 /* LaunchScreen.storyboard in Resources */,
 				CE0414522060FB3B00D88DA3 /* Assets.xcassets in Resources */,
-				CE0414842062A1AF00D88DA3 /* EnglandFlagEmoji.jpg in Resources */,
 				CE04144D2060FB3B00D88DA3 /* Main.storyboard in Resources */,
 				CE0414892062A51C00D88DA3 /* CountryTableViewCell.xib in Resources */,
 			);
@@ -404,7 +424,7 @@
 				CE04148C2063EAB300D88DA3 /* RegionsViewController.m in Sources */,
 				CE0414882062A51C00D88DA3 /* CountryTableViewCell.m in Sources */,
 				CE0414502060FB3B00D88DA3 /* CountryApp.xcdatamodeld in Sources */,
-				CE04144A2060FB3B00D88DA3 /* ViewController.m in Sources */,
+				CE04144A2060FB3B00D88DA3 /* LoginViewController.m in Sources */,
 				CE0414952065210A00D88DA3 /* Country.m in Sources */,
 				CE0414582060FB3B00D88DA3 /* main.m in Sources */,
 				E79333BD207B836F00201D60 /* CustomSplitViewController.m in Sources */,

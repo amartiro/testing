@@ -1,14 +1,14 @@
 //
-//  ViewController.m
+//  LoginViewController.m
 //  CountryApp
 //
 //  Created by Artak on 3/20/18.
 //  Copyright © 2018 Artak. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LoginViewController.h"
 
-@interface ViewController ()
+@interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
@@ -22,7 +22,7 @@
 
 
 
-@implementation ViewController
+@implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

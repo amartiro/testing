@@ -14,7 +14,5 @@
 @property (assign, nonatomic) double latitude;
 @property (assign, nonatomic) double longitutde;
 
-
-
 -(void) showLoaction:(double) latitude andLongitude:(double) longitutde;
 @end

@@ -8,7 +8,7 @@
 
 #import "CountriesViewController.h"
 #import "CountryTableViewCell.h"
-#import "ViewController.h"
+#import "LoginViewController.h"
 #import "NetworkManager.h"
 #import "Country.h"
 #import "DetailsViewController.h"
@@ -26,6 +26,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = self.region;
+
+    
     self.countries = [NSMutableArray array];
     UINib *cellNib = [UINib nibWithNibName:@"CountryTableViewCell" bundle:nil];
 
@@ -68,25 +71,24 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
+    CGFloat zoomLevel = 0.4;
     Country * country = self.countries[indexPath.row];
     CountryTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"CountryTableViewCell"];
     cell.nameLabel.text = country.name;
  //   NSData * imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:country.flag]];
     NSURLRequest * request =  [NSURLRequest requestWithURL:[NSURL URLWithString:country.flag]] ;
     [cell.webView loadRequest:request];
-    cell.webView.scrollView.maximumZoomScale = 0.4;
-    cell.webView.scrollView.minimumZoomScale = 0.4;
-    cell.webView.scrollView.zoomScale = 0.4;
+    cell.webView.scrollView.maximumZoomScale = zoomLevel;
+    cell.webView.scrollView.minimumZoomScale = zoomLevel;
+    cell.webView.scrollView.zoomScale = zoomLevel;
     cell.webView.userInteractionEnabled = false;
     cell.webView.scalesPageToFit = true;
 
-    
     return  cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return  70.0;
-    
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -96,20 +98,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.selectedIndex = indexPath.row;
     
-    
-    
-    [self showLoaction]; //NSLog(NSStringFromCGRect(self.navigationController.splitViewController.view.frame));
-   // ViewController *viewController =  [[ViewController alloc] init];
-   // [self.navigationController pushViewController:viewController animated:true];
+    [self showLoaction];
 }
 
 -(void) showLoaction{
     Country * country = self.countries[self.selectedIndex];
     UISplitViewController * splitController = self.navigationController.splitViewController;
     if (splitController.viewControllers.count > 1) {
-    //    UINavigationController * detailNavControler = splitController.viewControllers[1];
-   //     DetailsViewController * detailController1 = (DetailsViewController *)detailNavControler.viewControllers[0];
-        
         DetailsViewController * detailController = splitController.viewControllers[1];//(DetailsViewController *)detailNavControler.viewControllers[0];
         [detailController showLoaction:country.lat  andLongitude:country.lon];
     } else {

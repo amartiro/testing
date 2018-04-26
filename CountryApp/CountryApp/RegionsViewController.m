@@ -27,7 +27,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.regionDict = [NSDictionary dictionaryWithObjectsAndKeys:@"Europe", @"europe", @"Africa", @"africa", @"Americas", @"americas", @"Asia", @"asia", @"Oceania", @"oceania", nil];
+     self.regionDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                        @"Europe", @"europe",
+                        @"Africa", @"africa",
+                        @"Americas", @"americas",
+                        @"Asia", @"asia",
+                        @"Oceania", @"oceania",
+                        nil];
     
 }
 
@@ -50,7 +56,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return  70.0;
-    
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -69,16 +74,6 @@
         viewController.region = self.regionDict[self.regionDict.allKeys[self.selectedIndex]];
         
     }
-    
-    
 }
-//-(void) performSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
-//    if ([identifier isEqualToString:@"regionToCounties"]) {
-//        NSLog(@"You got it");
-//        CountriesViewController * viewController = segue
-//        
-//    }
-//    
-//}
 
 @end
