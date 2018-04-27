@@ -25,6 +25,7 @@
 		CE0414902065045D00D88DA3 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0414912065045D00D88DA3 /* libAFNetworking.a */; };
 		CE0414952065210A00D88DA3 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0414942065210A00D88DA3 /* Country.m */; };
 		DB3DDAFC05B1FCD9C28542CB /* libPods-CountryApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04874269D0A5603E663FFA25 /* libPods-CountryApp.a */; };
+		E791A77D20936F5900D1A958 /* CountriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E791A77C20936F5900D1A958 /* CountriesModel.m */; };
 		E79333BD207B836F00201D60 /* CustomSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79333BC207B836F00201D60 /* CustomSplitViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,8 @@
 		CE0414912065045D00D88DA3 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0414932065210A00D88DA3 /* Country.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
 		CE0414942065210A00D88DA3 /* Country.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		E791A77B20936F5900D1A958 /* CountriesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CountriesModel.h; path = CountriesModel/CountriesModel.h; sourceTree = "<group>"; };
+		E791A77C20936F5900D1A958 /* CountriesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountriesModel.m; path = CountriesModel/CountriesModel.m; sourceTree = "<group>"; };
 		E79333BB207B836F00201D60 /* CustomSplitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomSplitViewController.h; sourceTree = "<group>"; };
 		E79333BC207B836F00201D60 /* CustomSplitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomSplitViewController.m; sourceTree = "<group>"; };
 		E91F23B30EB07C1A033F18E1 /* Pods-CountryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountryApp/Pods-CountryApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 				CE04144E2060FB3B00D88DA3 /* CountryApp.xcdatamodeld */,
 				E791A72E2091BB8400D1A958 /* TableCell */,
 				E791A72F2091CD1D00D1A958 /* NetworkManager */,
+				E791A77B20936F5900D1A958 /* CountriesModel.h */,
+				E791A77C20936F5900D1A958 /* CountriesModel.m */,
 			);
 			path = CountryApp;
 			sourceTree = "<group>";
@@ -298,7 +303,7 @@
 		CE04143A2060FB3B00D88DA3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Artak;
 				TargetAttributes = {
 					CE0414412060FB3B00D88DA3 = {
@@ -425,6 +430,7 @@
 				CE0414882062A51C00D88DA3 /* CountryTableViewCell.m in Sources */,
 				CE0414502060FB3B00D88DA3 /* CountryApp.xcdatamodeld in Sources */,
 				CE04144A2060FB3B00D88DA3 /* LoginViewController.m in Sources */,
+				E791A77D20936F5900D1A958 /* CountriesModel.m in Sources */,
 				CE0414952065210A00D88DA3 /* Country.m in Sources */,
 				CE0414582060FB3B00D88DA3 /* main.m in Sources */,
 				E79333BD207B836F00201D60 /* CustomSplitViewController.m in Sources */,
@@ -500,6 +506,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -507,6 +514,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -555,6 +563,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -562,6 +571,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

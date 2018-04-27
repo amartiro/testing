@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "CustomSplitViewController.h"
 
-@interface DetailsViewController : UIViewController
+@interface DetailsViewController : UIViewController <DetailDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (assign, nonatomic) double latitude;
-@property (assign, nonatomic) double longitutde;
 
--(void) showLoaction:(double) latitude andLongitude:(double) longitutde;
 @end

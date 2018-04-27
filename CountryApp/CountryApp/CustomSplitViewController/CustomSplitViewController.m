@@ -19,6 +19,12 @@
     self.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;
     // Do any additional setup after loading the view.
     self.delegate = self;
+
+    if ([self.viewControllers.lastObject conformsToProtocol:@protocol(DetailDelegate)]) {
+        UIViewController<DetailDelegate>* detail =  self.viewControllers.lastObject;
+        
+        self.detailDelegate = detail;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,7 +39,6 @@
 
 - (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController{
     return true;
-    
 }
 
 

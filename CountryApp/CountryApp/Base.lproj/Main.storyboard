@@ -280,7 +280,6 @@
                     </view>
                     <connections>
                         <outlet property="countriesTableView" destination="TDA-Vp-MdB" id="dCa-5F-vHH"/>
-                        <segue destination="fD3-eu-HTG" kind="show" identifier="countryToMap" id="MsA-ac-zH4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ITV-ad-QH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -309,31 +308,12 @@
                 <splitViewController id="wSH-Cj-zXX" customClass="CustomSplitViewController" sceneMemberID="viewController">
                     <connections>
                         <segue destination="Ts2-hc-ajH" kind="relationship" relationship="masterViewController" id="yeE-2l-iah"/>
-                        <segue destination="fD3-eu-HTG" kind="relationship" relationship="detailViewController" id="Qry-hF-ctc"/>
+                        <segue destination="fD3-eu-HTG" kind="relationship" relationship="detailViewController" id="mvA-Mu-EgW"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hqu-jx-mpl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="866" y="119"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Gun-cI-k0h">
-            <objects>
-                <navigationController id="sNM-9W-B9n" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Jw-7U-6Xo">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="fD3-eu-HTG" kind="relationship" relationship="rootViewController" id="ShS-fn-ct0"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MbA-dw-SMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1414" y="1170"/>
-        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="MsA-ac-zH4"/>
-    </inferredMetricsTieBreakers>
 </document>

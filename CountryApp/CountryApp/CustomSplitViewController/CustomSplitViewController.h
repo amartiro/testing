@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class  Country;
+
+@protocol DetailDelegate
+-(void)didSelectCountry:(Country *) country;
+@end
+
 @interface CustomSplitViewController : UISplitViewController<UISplitViewControllerDelegate>
 
+
+@property (nonatomic, nonnull, strong) id<DetailDelegate> detailDelegate;
 @end

@@ -64,6 +64,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.selectedIndex = indexPath.row;
+    
     [self performSegueWithIdentifier:@"regionToCounties" sender:nil];
 }
 
@@ -72,7 +73,6 @@
         NSLog(@"You got it");
         CountriesViewController * viewController = segue.destinationViewController;
         viewController.region = self.regionDict[self.regionDict.allKeys[self.selectedIndex]];
-        
     }
 }
 

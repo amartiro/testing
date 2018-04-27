@@ -12,6 +12,8 @@
 #import "NetworkManager.h"
 #import "Country.h"
 #import "DetailsViewController.h"
+#import "AppDelegate.h"
+#import "CustomSplitViewController.h"
 
 @interface CountriesViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *countriesTableView;
@@ -103,24 +105,13 @@
 
 -(void) showLoaction{
     Country * country = self.countries[self.selectedIndex];
-    UISplitViewController * splitController = self.navigationController.splitViewController;
-    if (splitController.viewControllers.count > 1) {
-        DetailsViewController * detailController = splitController.viewControllers[1];//(DetailsViewController *)detailNavControler.viewControllers[0];
-        [detailController showLoaction:country.lat  andLongitude:country.lon];
-    } else {
-        [self performSegueWithIdentifier:@"countryToMap" sender:nil];
-    }
-}
-
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"countryToMap"]) {
-        Country * country = self.countries[self.selectedIndex];
-
-        DetailsViewController * viewController = segue.destinationViewController;
-        [viewController showLoaction:country.lat  andLongitude:country.lon];        
-    }
     
+    CustomSplitViewController * splitController = self.navigationController.splitViewController;
+    DetailsViewController * detailController = splitController.detailDelegate;
+    [detailController didSelectCountry:country];
     
+    [splitController showDetailViewController:detailController sender:nil];
+
 }
 
 @end
