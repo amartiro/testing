@@ -9,18 +9,18 @@
 #import "CountriesViewController.h"
 #import "CountryTableViewCell.h"
 #import "LoginViewController.h"
-#import "NetworkManager.h"
 #import "Country.h"
 #import "DetailsViewController.h"
 #import "AppDelegate.h"
 #import "CustomSplitViewController.h"
+#import "CountriesModel.h"
+
+#import <UIKit+AFNetworking.h>
 
 @interface CountriesViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *countriesTableView;
 @property (strong, nonatomic) NSMutableArray *countries;
 @property (nonatomic, assign) NSInteger selectedIndex;
-
-
 
 @end
 
@@ -39,21 +39,28 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor purpleColor];
     
-    [[NetworkManager sharedManager] getCountriesForRegion:self.region success:^(id responseObject) {
+    [[CountriesModel sharedManager] getCountriesForRegion:self.region success:^(NSArray<Country *> *countries) {
         [self.countries removeAllObjects];
-        NSArray * countriesArray = [NSArray arrayWithArray:responseObject];
-        for (int i =0; i < countriesArray.count; ++i){
-            NSDictionary * countryDict = countriesArray[i];
-            Country * country = [[Country alloc] intitWithDict:countryDict];
-            [self.countries addObject:country];
-        }
+        [self.countries addObjectsFromArray:countries];
         [self.countriesTableView reloadData];
-        // Allow User Access and load content
-        //[self loadContent];
     } failure:^(NSString *failureReason, NSInteger statusCode) {
-        // Logout user if logged in and deny access and show login view
-        //[self showLoginView];
+        
     }];
+//    [[NetworkManager sharedManager] getCountriesForRegion:self.region success:^(id responseObject) {
+//
+//        NSArray * countriesArray = [NSArray arrayWithArray:responseObject];
+//        for (int i =0; i < countriesArray.count; ++i){
+//            NSDictionary * countryDict = countriesArray[i];
+//            Country * country = [[Country alloc] intitWithDict:countryDict];
+//            [self.countries addObject:country];
+//        }
+//        [self.countriesTableView reloadData];
+//        // Allow User Access and load content
+//        //[self loadContent];
+//    } failure:^(NSString *failureReason, NSInteger statusCode) {
+//        // Logout user if logged in and deny access and show login view
+//        //[self showLoginView];
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,18 +80,11 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
-    CGFloat zoomLevel = 0.4;
     Country * country = self.countries[indexPath.row];
     CountryTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"CountryTableViewCell"];
     cell.nameLabel.text = country.name;
- //   NSData * imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:country.flag]];
-    NSURLRequest * request =  [NSURLRequest requestWithURL:[NSURL URLWithString:country.flag]] ;
-    [cell.webView loadRequest:request];
-    cell.webView.scrollView.maximumZoomScale = zoomLevel;
-    cell.webView.scrollView.minimumZoomScale = zoomLevel;
-    cell.webView.scrollView.zoomScale = zoomLevel;
-    cell.webView.userInteractionEnabled = false;
-    cell.webView.scalesPageToFit = true;
+    
+    [cell.flagView setImageWithURL:[NSURL URLWithString:country.flag] placeholderImage:[UIImage imageNamed:@"flag_placeholder.png"]];
 
     return  cell;
 }
@@ -106,8 +106,8 @@
 -(void) showLoaction{
     Country * country = self.countries[self.selectedIndex];
     
-    CustomSplitViewController * splitController = self.navigationController.splitViewController;
-    DetailsViewController * detailController = splitController.detailDelegate;
+    CustomSplitViewController * splitController = (CustomSplitViewController *)self.navigationController.splitViewController;
+    UIViewController<DetailDelegate>* detailController = splitController.detailDelegate;
     [detailController didSelectCountry:country];
     
     [splitController showDetailViewController:detailController sender:nil];

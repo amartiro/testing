@@ -17,5 +17,5 @@
 @interface CustomSplitViewController : UISplitViewController<UISplitViewControllerDelegate>
 
 
-@property (nonatomic, nonnull, strong) id<DetailDelegate> detailDelegate;
+@property (nonatomic, nonnull, strong) UIViewController<DetailDelegate> *detailDelegate;
 @end
