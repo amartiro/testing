@@ -9,9 +9,13 @@
 #import "NetworkManager.h"
 
 #define ENABLE_SSL 1
+
+//http://countryapi.gear.host/v1/Country/getCountries
 #define HOST @"restcountries.eu/rest/v2/"
+#define HOST1 @"countryapi.gear.host/v1/"
+
 #define PROTOCOL (ENABLE_SSL ? @"https://" : @"http://")
-#define BASE_URL [NSString stringWithFormat:@"%@%@", PROTOCOL, HOST]
+#define BASE_URL [NSString stringWithFormat:@"%@%@", PROTOCOL, HOST1]
 
 
 @implementation NetworkManager
@@ -45,9 +49,15 @@ static NetworkManager *sharedManager = nil;
 - (AFHTTPSessionManager*)getNetworkingManager {
     if (self.networkingManager == nil) {
         self.networkingManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BASE_URL]];
-       
-//        self.networkingManager.requestSerializer = [AFJSONRequestSerializer serializer];
-//        self.networkingManager.responseSerializer.acceptableContentTypes = [self.networkingManager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"text/html", @"application/json", @"text/json"]];
+
+        self.networkingManager.securityPolicy = [self getSecurityPolicy];
+    }
+    return self.networkingManager;
+}
+
+- (AFHTTPSessionManager*)getNetworkingManager1 {
+    if (self.networkingManager == nil) {
+        self.networkingManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BASE_URL]];
         self.networkingManager.securityPolicy = [self getSecurityPolicy];
     }
     return self.networkingManager;
@@ -85,5 +95,23 @@ static NetworkManager *sharedManager = nil;
         }
     }];
 }
+
+- (void)getCountriesForNewRegion:(NSString *) region success:(NetworkManagerSuccess)success failure:(NetworkManagerFailure)failure{
+    [[self getNetworkingManager1] GET:[NSString stringWithFormat:@"Country/getCountries"] parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        //       [self hideProgressHUD];
+        if (success != nil) {
+            success(responseObject);
+        }
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        //        [self hideProgressHUD];
+        NSString *errorMessage = [self getError:error];
+        if (failure != nil) {
+            failure(errorMessage, ((NSHTTPURLResponse*)operation.response).statusCode);
+        }
+    }];
+    
+}
+
+
 
 @end

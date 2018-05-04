@@ -12,14 +12,17 @@
 
 -(instancetype) intitWithDict:(NSDictionary *) dict{
     if (self) {
-        self.name = [dict objectForKey:@"name"];
-        self.flag = [dict objectForKey:@"flag"];
+        self.name = [dict objectForKey:@"Name"];
+        self.flag = [dict objectForKey:@"FlagPng"];
+        self.lat = [[dict objectForKey:@"Latitude"] doubleValue];
+        self.lon = [[dict objectForKey:@"Longitude"] doubleValue];
         
-        NSArray *latlong = [dict objectForKey:@"latlng"];
-        if (latlong != nil && latlong.count > 1) {
-            self.lat = [[latlong objectAtIndex:0] doubleValue];
-            self.lon = [[latlong objectAtIndex:1] doubleValue];
-        }
+        
+//        NSArray *latlong = [dict objectForKey:@"latlng"];
+//        if (latlong != nil && latlong.count > 1) {
+//            self.lat = [[latlong objectAtIndex:0] doubleValue];
+//            self.lon = [[latlong objectAtIndex:1] doubleValue];
+//        }
 
     }
 

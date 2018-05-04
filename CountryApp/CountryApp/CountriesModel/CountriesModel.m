@@ -8,28 +8,53 @@
 
 #import "CountriesModel.h"
 #import "NetworkManager.h"
+#import "Country.h"
 
 @implementation CountriesModel
 
 
+static CountriesModel *sharedModel = nil;
+
++ (CountriesModel*)sharedManager {
+    static dispatch_once_t once;
+    dispatch_once(&once, ^
+                  {
+                      sharedModel = [[CountriesModel alloc] init];
+                  });
+    return sharedModel;
+}
+
+- (void)getCountriesForRegion:(NSString *) region success:(CountryManagerSuccess)success failure:(CountryManagerFailure)failure{
+    NSMutableArray * countries = [NSMutableArray array];
+    
+   // [[NetworkManager sharedManager] getCountriesForRegion:region success:^(id responseObject) {getCountriesForNewRegion
+    [[NetworkManager sharedManager] getCountriesForNewRegion:region success:^(id responseObject) {
+        NSDictionary * responseDict = responseObject;
+        
+        NSArray * countriesArray = [responseDict objectForKey:@"Response"];
+        for (int i =0; i < countriesArray.count; ++i){
+            NSDictionary * countryDict = countriesArray[i];
+            Country * country = [[Country alloc] intitWithDict:countryDict];
+            [countries addObject:country];
+        }
+        
+        if (success != nil) {
+            success(countries);
+        }
+    } failure:^(NSString *failureReason, NSInteger statusCode) {
+        if (failure != nil) {
+            failure(failureReason, statusCode);
+        }
+    }];
+    
+}
+
+
 
 //{
-//    
-//    [[NetworkManager sharedManager] getCountriesForRegion:self.region success:^(id responseObject) {
-//        [self.countries removeAllObjects];
-//        NSArray * countriesArray = [NSArray arrayWithArray:responseObject];
-//        for (int i =0; i < countriesArray.count; ++i){
-//            NSDictionary * countryDict = countriesArray[i];
-//            Country * country = [[Country alloc] intitWithDict:countryDict];
-//            [self.countries addObject:country];
-//        }
-//        [self.countriesTableView reloadData];
-//        // Allow User Access and load content
-//        //[self loadContent];
-//    } failure:^(NSString *failureReason, NSInteger statusCode) {
-//        // Logout user if logged in and deny access and show login view
-//        //[self showLoginView];
-//    }];
-//    
+//
+//
+//
 //}
 @end
+
