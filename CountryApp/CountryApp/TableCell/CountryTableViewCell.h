@@ -10,8 +10,7 @@
 #import <WebKit/WebKit.h>
 
 @interface CountryTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIImageView *flagView;
 
 @end

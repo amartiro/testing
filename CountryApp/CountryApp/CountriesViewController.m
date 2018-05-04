@@ -80,22 +80,11 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
-    CGFloat zoomLevel = 0.4;
     Country * country = self.countries[indexPath.row];
     CountryTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"CountryTableViewCell"];
     cell.nameLabel.text = country.name;
     
-    UIImageView *view = [UIImageView new];
-    [view setImageWithURL:[NSURL URLWithString:country.flag] placeholderImage:[UIImage imageNamed:@"flag_placeholder.png"]];
-
-    //NSData * imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:country.flag]];
-    NSURLRequest * request =  [NSURLRequest requestWithURL:[NSURL URLWithString:country.flag]] ;
-    [cell.webView loadRequest:request];
-    cell.webView.scrollView.maximumZoomScale = zoomLevel;
-    cell.webView.scrollView.minimumZoomScale = zoomLevel;
-    cell.webView.scrollView.zoomScale = zoomLevel;
-    cell.webView.userInteractionEnabled = false;
-    cell.webView.scalesPageToFit = true;
+    [cell.flagView setImageWithURL:[NSURL URLWithString:country.flag] placeholderImage:[UIImage imageNamed:@"flag_placeholder.png"]];
 
     return  cell;
 }
