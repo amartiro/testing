@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E791A73F20921BC000D1A958 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E791A73E20921BC000D1A958 /* AppDelegate.m */; };
-		E791A74220921BC000D1A958 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E791A74120921BC000D1A958 /* ViewController.m */; };
 		E791A74520921BC000D1A958 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E791A74320921BC000D1A958 /* Main.storyboard */; };
 		E791A74820921BC000D1A958 /* CountriesApllication.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E791A74620921BC000D1A958 /* CountriesApllication.xcdatamodeld */; };
 		E791A74A20921BC300D1A958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E791A74920921BC300D1A958 /* Assets.xcassets */; };
@@ -16,6 +15,8 @@
 		E791A75020921BC300D1A958 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E791A74F20921BC300D1A958 /* main.m */; };
 		E791A75A20921BC300D1A958 /* CountriesApllicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E791A75920921BC300D1A958 /* CountriesApllicationTests.m */; };
 		E791A76520921BC300D1A958 /* CountriesApllicationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E791A76420921BC300D1A958 /* CountriesApllicationUITests.m */; };
+		E791A7772092238600D1A958 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E791A7762092238600D1A958 /* MasterViewController.m */; };
+		E791A77A2092246400D1A958 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E791A7792092246400D1A958 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +40,6 @@
 		E791A73A20921BC000D1A958 /* CountriesApllication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountriesApllication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E791A73D20921BC000D1A958 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E791A73E20921BC000D1A958 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E791A74020921BC000D1A958 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E791A74120921BC000D1A958 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E791A74420921BC000D1A958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E791A74720921BC000D1A958 /* CountriesApllication.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CountriesApllication.xcdatamodel; sourceTree = "<group>"; };
 		E791A74920921BC300D1A958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +52,10 @@
 		E791A76020921BC300D1A958 /* CountriesApllicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountriesApllicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E791A76420921BC300D1A958 /* CountriesApllicationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountriesApllicationUITests.m; sourceTree = "<group>"; };
 		E791A76620921BC300D1A958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E791A7752092238600D1A958 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MasterViewController.h; path = MasterViewController/MasterViewController.h; sourceTree = "<group>"; };
+		E791A7762092238600D1A958 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MasterViewController.m; path = MasterViewController/MasterViewController.m; sourceTree = "<group>"; };
+		E791A7782092246400D1A958 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = DetailViewController/DetailViewController.h; sourceTree = "<group>"; };
+		E791A7792092246400D1A958 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = DetailViewController/DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,14 +108,16 @@
 			children = (
 				E791A73D20921BC000D1A958 /* AppDelegate.h */,
 				E791A73E20921BC000D1A958 /* AppDelegate.m */,
-				E791A74020921BC000D1A958 /* ViewController.h */,
-				E791A74120921BC000D1A958 /* ViewController.m */,
 				E791A74320921BC000D1A958 /* Main.storyboard */,
 				E791A74920921BC300D1A958 /* Assets.xcassets */,
 				E791A74B20921BC300D1A958 /* LaunchScreen.storyboard */,
 				E791A74E20921BC300D1A958 /* Info.plist */,
 				E791A74F20921BC300D1A958 /* main.m */,
 				E791A74620921BC000D1A958 /* CountriesApllication.xcdatamodeld */,
+				E791A7752092238600D1A958 /* MasterViewController.h */,
+				E791A7762092238600D1A958 /* MasterViewController.m */,
+				E791A7782092246400D1A958 /* DetailViewController.h */,
+				E791A7792092246400D1A958 /* DetailViewController.m */,
 			);
 			path = CountriesApllication;
 			sourceTree = "<group>";
@@ -265,8 +270,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E791A77A2092246400D1A958 /* DetailViewController.m in Sources */,
+				E791A7772092238600D1A958 /* MasterViewController.m in Sources */,
 				E791A74820921BC000D1A958 /* CountriesApllication.xcdatamodeld in Sources */,
-				E791A74220921BC000D1A958 /* ViewController.m in Sources */,
 				E791A75020921BC300D1A958 /* main.m in Sources */,
 				E791A73F20921BC000D1A958 /* AppDelegate.m in Sources */,
 			);

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -22,7 +22,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJz-5c-Se1">
-                        <rect key="frame" x="75" y="5" width="224" height="22.5"/>
+                        <rect key="frame" x="87.5" y="5" width="224" height="22.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="OJz-5c-Se1" secondAttribute="height" multiplier="10" id="Pd4-Ry-aZA"/>
                         </constraints>
@@ -30,28 +30,28 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ecV-r7-Uxb">
-                        <rect key="frame" x="8" y="2" width="59" height="39.5"/>
-                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c5d-jv-d27">
+                        <rect key="frame" x="20" y="2" width="59.5" height="39.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="ecV-r7-Uxb" secondAttribute="height" multiplier="3:2" id="rGQ-3j-eTN"/>
+                            <constraint firstAttribute="width" secondItem="c5d-jv-d27" secondAttribute="height" multiplier="3:2" id="QjN-ki-pgy"/>
                         </constraints>
-                    </webView>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="ecV-r7-Uxb" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="9:10" id="1DY-lh-pT4"/>
-                    <constraint firstItem="ecV-r7-Uxb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="7BL-tq-NTd"/>
+                    <constraint firstItem="c5d-jv-d27" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.9" id="5nu-lr-C5b"/>
                     <constraint firstItem="OJz-5c-Se1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Bqi-I9-9KG"/>
                     <constraint firstItem="OJz-5c-Se1" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.7" id="H3v-Ay-is2"/>
-                    <constraint firstItem="ecV-r7-Uxb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="SOV-gF-yG3"/>
-                    <constraint firstItem="OJz-5c-Se1" firstAttribute="leading" secondItem="ecV-r7-Uxb" secondAttribute="trailing" constant="8" symbolic="YES" id="ZKP-cv-2dg"/>
+                    <constraint firstItem="OJz-5c-Se1" firstAttribute="leading" secondItem="c5d-jv-d27" secondAttribute="trailing" constant="8" symbolic="YES" id="Qb9-ap-QfM"/>
+                    <constraint firstItem="c5d-jv-d27" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="X9R-dt-yds"/>
+                    <constraint firstItem="c5d-jv-d27" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xBK-lW-XrI"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="flagView" destination="c5d-jv-d27" id="P4H-E9-t9v"/>
+                <outlet property="imageView" destination="c5d-jv-d27" id="LeA-uV-Aw5"/>
                 <outlet property="nameLabel" destination="OJz-5c-Se1" id="VfY-1R-oq1"/>
-                <outlet property="webView" destination="ecV-r7-Uxb" id="PI4-Ju-fqw"/>
             </connections>
         </tableViewCell>
     </objects>
