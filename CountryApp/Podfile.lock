@@ -14,33 +14,16 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - CocoaLumberjack (3.4.0):
-    - CocoaLumberjack/Default (= 3.4.0)
-    - CocoaLumberjack/Extensions (= 3.4.0)
-  - CocoaLumberjack/Default (3.4.0)
-  - CocoaLumberjack/Extensions (3.4.0):
-    - CocoaLumberjack/Default
-  - SVGKit (2.0.1):
-    - CocoaLumberjack (~> 3.x)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
-  - SVGKit (from `https://github.com/SVGKit/SVGKit.git`)
-
-EXTERNAL SOURCES:
-  SVGKit:
-    :git: https://github.com/SVGKit/SVGKit.git
-
-CHECKOUT OPTIONS:
-  SVGKit:
-    :commit: 0799e49c6ccd387888c5a6592b93f8b42e41bfeb
-    :git: https://github.com/SVGKit/SVGKit.git
+  - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  CocoaLumberjack: e033a5d8513357af2dd456eb66e202c325c30627
-  SVGKit: 4055d9e809b5db8633755979cfb3b02dc5a8c20d
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: ef4b83e432beacfc38ec80055003b89df5734375
+PODFILE CHECKSUM: 504fc99c4d0f750e2d966260e6af5d8b97b31bfc
 
 COCOAPODS: 1.4.0

@@ -25,6 +25,4 @@
     [self.mapView setZoomEnabled:true];
 }
 
-
-
 @end

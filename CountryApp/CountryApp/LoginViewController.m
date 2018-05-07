@@ -67,17 +67,7 @@
     
     CGRect visibleRect = CGRectMake(_activeTextField.frame.origin.x, _activeTextField.frame.origin.y - 1.1 * _activeTextField.frame.size.height, _activeTextField.frame.size.width, 2.1 * _activeTextField.frame.size.height);
    
- //   [_contentScrollView setContentOffset:CGPointMake(0, _activeTextField.frame.origin.y - _activeTextField.frame.size.height) animated:YES];
-    
     [_contentScrollView scrollRectToVisible:visibleRect animated:true];
-    // If active text field is hidden by keyboard, scroll it so it's visible
-    // Your application might not need or want this behavior.
-//    CGRect aRect = self.view.frame;
-//    aRect.size.height -= kbSize.height;
-//    if (!CGRectContainsPoint(aRect, _activeTextField.frame.origin) ) {
-//        CGPoint scrollPoint = CGPointMake(0.0, _activeTextField.frame.origin.y-kbSize.height);
-//        [_contentScrollView setContentOffset:scrollPoint animated:YES];
-//    }
 }
 
 // Called when the UIKeyboardWillHideNotification is sent
