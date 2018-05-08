@@ -16,7 +16,7 @@ typedef void (^CountryManagerFailure)(NSString *failureReason, NSInteger statusC
 
 @interface CountriesModel : NSObject
 
-- (void)getCountriesForRegion:(NSString *) region success:(CountryManagerSuccess)success failure:(CountryManagerFailure)failure;
+- (void)getCountriesForRegion:(NSString *) region andSubRegion:(NSString *) subregion success:(CountryManagerSuccess)success failure:(CountryManagerFailure)failure;
 
 + (id)sharedManager;
 

@@ -16,7 +16,7 @@ typedef void (^NetworkManagerFailure)(NSString *failureReason, NSInteger statusC
 
 @interface NetworkManager : NSObject
 
-- (void)getCountriesForRegion:(NSString *) region success:(NetworkManagerSuccess)success failure:(NetworkManagerFailure)failure;
+- (void)getCountriesForRegion:(NSString *) region andSubRegion:(NSString *) subregion success:(NetworkManagerSuccess)success failure:(NetworkManagerFailure)failure;
 
 + (id)sharedManager;
 

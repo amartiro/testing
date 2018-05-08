@@ -11,7 +11,7 @@
 
 #define ENABLE_SSL 1
 
-//http://countryapi.gear.host/v1/Country/getCountries
+//http://countryapi.gear.host/v1/Country/getCountries?pRegion=Americas&pSubRegion=Central%20America
 #define HOST @"countryapi.gear.host/v1/"
 
 #define PROTOCOL (ENABLE_SSL ? @"https://" : @"http://")
@@ -68,10 +68,12 @@ static NetworkManager *sharedManager = nil;
     return @"Server Error. Please try again later";
 }
 
-- (void)getCountriesForRegion:(NSString *) region success:(NetworkManagerSuccess)success failure:(NetworkManagerFailure)failure{
+- (void)getCountriesForRegion:(NSString *) region andSubRegion:(NSString *) subregion success:(NetworkManagerSuccess)success failure:(NetworkManagerFailure)failure{
     [self showProgressHUD];
-
-    [[self getNetworkingManager] GET:[NSString stringWithFormat:@"Country/getCountries"] parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+    NSString *urlString = [NSString stringWithFormat:@"Country/getCountries?pRegion=%@&pSubRegion=%@", region, subregion];
+    
+   
+    [[self getNetworkingManager] GET:urlString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
                [self hideProgressHUD];
         if (success != nil) {
             success(responseObject);

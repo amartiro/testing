@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Africa</key>
+	<array>
+		<string>Eastern Africa</string>
+		<string>Middle Africa</string>
+		<string>Northern Africa</string>
+		<string>Southern Africa</string>
+		<string>Western Africa</string>
+	</array>
+	<key>Americas</key>
+	<array>
+		<string>Caribbean</string>
+		<string>Central America</string>
+		<string>Northern America</string>
+		<string>South America</string>
+	</array>
+	<key>Asia</key>
+	<array>
+		<string>Central Asia</string>
+		<string>Eastern Asia</string>
+		<string>South-Eastern Asia</string>
+		<string>Southern Asia</string>
+		<string>Western Asia</string>
+	</array>
+	<key>Europe</key>
+	<array>
+		<string>Eastern Europe</string>
+		<string>Northern Europe</string>
+		<string>Southern Europe</string>
+		<string>Western Europe</string>
+	</array>
+	<key>Oceania</key>
+	<array>
+		<string>Australia and New Zealand</string>
+		<string>Melanesia</string>
+		<string>Micronesia</string>
+		<string>Polynesia</string>
+	</array>
+</dict>
+</plist>

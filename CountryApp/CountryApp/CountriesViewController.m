@@ -39,7 +39,9 @@
     self.countriesTableView.tableFooterView = [[UIView alloc] init];
 
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
-    [[CountriesModel sharedManager] getCountriesForRegion:self.region success:^(NSArray<Country *> *countries) {
+    self.region = @"Americas";
+    self.subregion = @"Central%20America";
+    [[CountriesModel sharedManager] getCountriesForRegion:self.region andSubRegion:self.subregion  success:^(NSArray<Country *> *countries) {
         [self.countries removeAllObjects];
         [self.countries addObjectsFromArray:countries];
         [self.countriesTableView reloadData];

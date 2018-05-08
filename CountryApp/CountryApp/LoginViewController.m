@@ -32,6 +32,9 @@
     [super viewWillAppear:animated];
     [self registerForKeyboardNotifications];
     
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Regions" ofType:@"plist"];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:plistPath];
+    
 }
 
 -(void) textFieldDidBeginEditing:(UITextField *)textField{
