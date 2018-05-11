@@ -70,9 +70,12 @@ static NetworkManager *sharedManager = nil;
 
 - (void)getCountriesForRegion:(NSString *) region andSubRegion:(NSString *) subregion success:(NetworkManagerSuccess)success failure:(NetworkManagerFailure)failure{
     [self showProgressHUD];
+    
     NSString *urlString = [NSString stringWithFormat:@"Country/getCountries?pRegion=%@&pSubRegion=%@", region, subregion];
     
-   
+  //   urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet whitespaceCharacterSet]];
+    
+//    urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
     [[self getNetworkingManager] GET:urlString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
                [self hideProgressHUD];
         if (success != nil) {

@@ -30,11 +30,7 @@
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self registerForKeyboardNotifications];
-    
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Regions" ofType:@"plist"];
-    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:plistPath];
-    
+    [self registerForKeyboardNotifications]; 
 }
 
 -(void) textFieldDidBeginEditing:(UITextField *)textField{

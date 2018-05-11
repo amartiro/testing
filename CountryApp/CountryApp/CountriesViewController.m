@@ -29,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = self.region;
+    self.title = self.subregion;
 
     NSString *cellName = @"CountryTableViewCell";
     self.countries = [NSMutableArray array];
@@ -39,8 +39,9 @@
     self.countriesTableView.tableFooterView = [[UIView alloc] init];
 
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
-    self.region = @"Americas";
-    self.subregion = @"Central%20America";
+
+    self.subregion = [self.subregion stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
+    
     [[CountriesModel sharedManager] getCountriesForRegion:self.region andSubRegion:self.subregion  success:^(NSArray<Country *> *countries) {
         [self.countries removeAllObjects];
         [self.countries addObjectsFromArray:countries];
