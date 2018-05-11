@@ -40,8 +40,6 @@
 
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
 
-    self.subregion = [self.subregion stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
-    
     [[CountriesModel sharedManager] getCountriesForRegion:self.region andSubRegion:self.subregion  success:^(NSArray<Country *> *countries) {
         [self.countries removeAllObjects];
         [self.countries addObjectsFromArray:countries];
