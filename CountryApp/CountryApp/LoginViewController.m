@@ -30,8 +30,7 @@
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self registerForKeyboardNotifications];
-    
+    [self registerForKeyboardNotifications]; 
 }
 
 -(void) textFieldDidBeginEditing:(UITextField *)textField{

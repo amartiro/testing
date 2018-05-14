@@ -10,5 +10,6 @@
 
 @interface CountriesViewController : UIViewController
 @property (nonatomic, strong)NSString* region;
+@property (nonatomic, strong)NSString* subregion;
 
 @end

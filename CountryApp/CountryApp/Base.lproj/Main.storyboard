@@ -245,12 +245,47 @@
                     <navigationItem key="navigationItem" id="JGQ-xV-Vxx"/>
                     <connections>
                         <outlet property="regionsTableView" destination="XAr-is-xrS" id="IuB-eZ-5lm"/>
-                        <segue destination="Fr6-L2-UmU" kind="show" identifier="regionToCounties" id="foI-SS-rLu"/>
+                        <segue destination="aL1-PJ-9ho" kind="show" identifier="regionToSubregions" id="V1K-cL-xim"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BUd-RL-vTQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2749.5999999999999" y="-199.25037481259372"/>
+        </scene>
+        <!--Subregions View Controller-->
+        <scene sceneID="J8x-pQ-Ke7">
+            <objects>
+                <viewController id="aL1-PJ-9ho" customClass="SubregionsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dad-PN-FPg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jk4-EF-PyW">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="aL1-PJ-9ho" id="2pA-Yn-K5f"/>
+                                    <outlet property="delegate" destination="aL1-PJ-9ho" id="XcX-FE-DWL"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jk4-EF-PyW" firstAttribute="centerY" secondItem="a3f-3E-9nC" secondAttribute="centerY" id="1YE-ed-mRr"/>
+                            <constraint firstItem="jk4-EF-PyW" firstAttribute="centerX" secondItem="a3f-3E-9nC" secondAttribute="centerX" id="4ah-Xl-DV4"/>
+                            <constraint firstItem="jk4-EF-PyW" firstAttribute="height" secondItem="a3f-3E-9nC" secondAttribute="height" id="B2S-nC-L51"/>
+                            <constraint firstItem="jk4-EF-PyW" firstAttribute="width" secondItem="a3f-3E-9nC" secondAttribute="width" id="RSi-JF-sqo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="a3f-3E-9nC"/>
+                    </view>
+                    <connections>
+                        <outlet property="subregionsTableView" destination="jk4-EF-PyW" id="RuZ-JO-bbA"/>
+                        <segue destination="Fr6-L2-UmU" kind="show" identifier="subregionToCountries" id="GsA-XC-CWh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KYV-jD-Ytj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3630" y="-199"/>
         </scene>
         <!--Countries View Controller-->
         <scene sceneID="GO4-XD-gKq">
@@ -284,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ITV-ad-QH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3538" y="-183"/>
+            <point key="canvasLocation" x="4484" y="-199"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="23d-Ja-4eG">

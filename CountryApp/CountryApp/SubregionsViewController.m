@@ -1,34 +1,26 @@
 //
-//  RegionsViewController.m
+//  SubregionsViewController.m
 //  CountryApp
 //
-//  Created by Artak on 3/22/18.
+//  Created by Artak Martirosyan on 5/10/18.
 //  Copyright © 2018 Artak. All rights reserved.
 //
 
-#import "RegionsViewController.h"
-#import "CountryTableViewCell.h"
 #import "SubregionsViewController.h"
+#import "CountriesViewController.h"
 
-@interface RegionsViewController ()<UITableViewDelegate, UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *regionsTableView;
-@property (strong, nonatomic) NSDictionary * regionDict;
+@interface SubregionsViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *subregionsTableView;
 @property (nonatomic, assign) NSInteger selectedIndex;
+
 @end
 
-@implementation RegionsViewController
-
--(instancetype) init{
-    self = [super init];
-   
-    return self;
-}
+@implementation SubregionsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Regions" ofType:@"plist"];
-    self.regionDict = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    // Do any additional setup after loading the view.
+    self.title = self.region;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,8 +34,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-  
-    cell.textLabel.text = [self.regionDict.allKeys objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [self.subregions objectAtIndex:indexPath.row];
     
     return  cell;
 }
@@ -53,21 +45,21 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.regionDict.allValues.count;
+    return self.subregions.count;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.selectedIndex = indexPath.row;
     
-    [self performSegueWithIdentifier:@"regionToSubregions" sender:nil];
+    [self performSegueWithIdentifier:@"subregionToCountries" sender:nil];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"regionToSubregions"]) {
+    if ([segue.identifier isEqualToString:@"subregionToCountries"]) {
         NSLog(@"You got it");
-        SubregionsViewController * viewController = segue.destinationViewController;
-        viewController.region = self.regionDict.allKeys[self.selectedIndex];
-        viewController.subregions = self.regionDict[viewController.region];
+        CountriesViewController * viewController = segue.destinationViewController;
+        viewController.region = self.region;
+        viewController.subregion = self.subregions[self.selectedIndex];
     }
 }
 

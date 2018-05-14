@@ -23,10 +23,10 @@ static CountriesModel *sharedModel = nil;
     return sharedModel;
 }
 
-- (void)getCountriesForRegion:(NSString *) region success:(CountryManagerSuccess)success failure:(CountryManagerFailure)failure{
+- (void)getCountriesForRegion:(NSString *) region andSubRegion:(NSString *) subregion success:(CountryManagerSuccess)success failure:(CountryManagerFailure)failure{
     NSMutableArray * countries = [NSMutableArray array];
     
-    [[NetworkManager sharedManager] getCountriesForRegion:region success:^(id responseObject) {
+    [[NetworkManager sharedManager] getCountriesForRegion:region andSubRegion:subregion  success:^(id responseObject) {
         NSDictionary * responseDict = responseObject;
         
         NSArray * countriesArray = [responseDict objectForKey:@"Response"];
