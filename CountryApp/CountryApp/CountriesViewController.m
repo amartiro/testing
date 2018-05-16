@@ -15,6 +15,7 @@
 #import "CustomSplitViewController.h"
 #import "CountriesModel.h"
 
+#import <SVProgressHUD.h>
 #import <UIKit+AFNetworking.h>
 
 @interface CountriesViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -28,55 +29,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = self.region;
+    self.title = self.subregion;
 
-    
+    NSString *cellName = @"CountryTableViewCell";
     self.countries = [NSMutableArray array];
-    UINib *cellNib = [UINib nibWithNibName:@"CountryTableViewCell" bundle:nil];
+    UINib *cellNib = [UINib nibWithNibName:cellName bundle:nil];
 
-    [self.countriesTableView registerNib:cellNib forCellReuseIdentifier:@"CountryTableViewCell"];
+    [self.countriesTableView registerNib:cellNib forCellReuseIdentifier:cellName];
     self.countriesTableView.tableFooterView = [[UIView alloc] init];
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor purpleColor];
-    
-    [[CountriesModel sharedManager] getCountriesForRegion:self.region success:^(NSArray<Country *> *countries) {
+
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+
+    [[CountriesModel sharedManager] getCountriesForRegion:self.region andSubRegion:self.subregion  success:^(NSArray<Country *> *countries) {
         [self.countries removeAllObjects];
         [self.countries addObjectsFromArray:countries];
         [self.countriesTableView reloadData];
     } failure:^(NSString *failureReason, NSInteger statusCode) {
         
     }];
-//    [[NetworkManager sharedManager] getCountriesForRegion:self.region success:^(id responseObject) {
-//
-//        NSArray * countriesArray = [NSArray arrayWithArray:responseObject];
-//        for (int i =0; i < countriesArray.count; ++i){
-//            NSDictionary * countryDict = countriesArray[i];
-//            Country * country = [[Country alloc] intitWithDict:countryDict];
-//            [self.countries addObject:country];
-//        }
-//        [self.countriesTableView reloadData];
-//        // Allow User Access and load content
-//        //[self loadContent];
-//    } failure:^(NSString *failureReason, NSInteger statusCode) {
-//        // Logout user if logged in and deny access and show login view
-//        //[self showLoginView];
-//    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
@@ -111,7 +86,6 @@
     [detailController didSelectCountry:country];
     
     [splitController showDetailViewController:detailController sender:nil];
-
 }
 
 @end

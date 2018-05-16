@@ -8,7 +8,7 @@
 
 #import "RegionsViewController.h"
 #import "CountryTableViewCell.h"
-#import "CountriesViewController.h"
+#import "SubregionsViewController.h"
 
 @interface RegionsViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *regionsTableView;
@@ -22,19 +22,13 @@
     self = [super init];
    
     return self;
-    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.regionDict = [NSDictionary dictionaryWithObjectsAndKeys:
-                        @"Europe", @"europe",
-                        @"Africa", @"africa",
-                        @"Americas", @"americas",
-                        @"Asia", @"asia",
-                        @"Oceania", @"oceania",
-                        nil];
     
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Regions" ofType:@"plist"];
+    self.regionDict = [NSDictionary dictionaryWithContentsOfFile:plistPath];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,7 +43,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
   
-    cell.textLabel.text = [self.regionDict.allValues objectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.regionDict.allKeys objectAtIndex:indexPath.row];
     
     return  cell;
 }
@@ -65,14 +59,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.selectedIndex = indexPath.row;
     
-    [self performSegueWithIdentifier:@"regionToCounties" sender:nil];
+    [self performSegueWithIdentifier:@"regionToSubregions" sender:nil];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"regionToCounties"]) {
+    if ([segue.identifier isEqualToString:@"regionToSubregions"]) {
         NSLog(@"You got it");
-        CountriesViewController * viewController = segue.destinationViewController;
-        viewController.region = self.regionDict[self.regionDict.allKeys[self.selectedIndex]];
+        SubregionsViewController * viewController = segue.destinationViewController;
+        viewController.region = self.regionDict.allKeys[self.selectedIndex];
+        viewController.subregions = self.regionDict[viewController.region];
     }
 }
 

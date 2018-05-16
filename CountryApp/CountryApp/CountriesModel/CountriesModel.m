@@ -17,18 +17,16 @@ static CountriesModel *sharedModel = nil;
 
 + (CountriesModel*)sharedManager {
     static dispatch_once_t once;
-    dispatch_once(&once, ^
-                  {
-                      sharedModel = [[CountriesModel alloc] init];
-                  });
+    dispatch_once(&once, ^{
+        sharedModel = [[CountriesModel alloc] init];
+    });
     return sharedModel;
 }
 
-- (void)getCountriesForRegion:(NSString *) region success:(CountryManagerSuccess)success failure:(CountryManagerFailure)failure{
+- (void)getCountriesForRegion:(NSString *) region andSubRegion:(NSString *) subregion success:(CountryManagerSuccess)success failure:(CountryManagerFailure)failure{
     NSMutableArray * countries = [NSMutableArray array];
     
-   // [[NetworkManager sharedManager] getCountriesForRegion:region success:^(id responseObject) {getCountriesForNewRegion
-    [[NetworkManager sharedManager] getCountriesForNewRegion:region success:^(id responseObject) {
+    [[NetworkManager sharedManager] getCountriesForRegion:region andSubRegion:subregion  success:^(id responseObject) {
         NSDictionary * responseDict = responseObject;
         
         NSArray * countriesArray = [responseDict objectForKey:@"Response"];
@@ -49,12 +47,4 @@ static CountriesModel *sharedModel = nil;
     
 }
 
-
-
-//{
-//
-//
-//
-//}
 @end
-

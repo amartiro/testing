@@ -16,14 +16,7 @@ typedef void (^NetworkManagerFailure)(NSString *failureReason, NSInteger statusC
 
 @interface NetworkManager : NSObject
 
-@property NSString *appID;
-@property (nonatomic, strong) AFHTTPSessionManager *networkingManager;
-
-- (void)getCountriesForRegion:(NSString *) region success:(NetworkManagerSuccess)success failure:(NetworkManagerFailure)failure;
-
-- (void)getCountriesForNewRegion:(NSString *) region success:(NetworkManagerSuccess)success failure:(NetworkManagerFailure)failure;
-
-- (void)test;
+- (void)getCountriesForRegion:(NSString *) region andSubRegion:(NSString *) subregion success:(NetworkManagerSuccess)success failure:(NetworkManagerFailure)failure;
 
 + (id)sharedManager;
 

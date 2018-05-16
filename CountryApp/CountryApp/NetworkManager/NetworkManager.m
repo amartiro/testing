@@ -7,16 +7,20 @@
 //
 
 #import "NetworkManager.h"
+#import "SVProgressHUD.h"
 
 #define ENABLE_SSL 1
 
-//http://countryapi.gear.host/v1/Country/getCountries
-#define HOST @"restcountries.eu/rest/v2/"
-#define HOST1 @"countryapi.gear.host/v1/"
+//http://countryapi.gear.host/v1/Country/getCountries?pRegion=Americas&pSubRegion=Central%20America
+#define HOST @"countryapi.gear.host/v1/"
 
 #define PROTOCOL (ENABLE_SSL ? @"https://" : @"http://")
-#define BASE_URL [NSString stringWithFormat:@"%@%@", PROTOCOL, HOST1]
+#define BASE_URL [NSString stringWithFormat:@"%@%@", PROTOCOL, HOST]
 
+@interface NetworkManager()
+@property NSString *appID;
+@property (nonatomic, strong) AFHTTPSessionManager *networkingManager;
+@end
 
 @implementation NetworkManager
 
@@ -41,21 +45,7 @@ static NetworkManager *sharedManager = nil;
     return self;
 }
 
-- (void)test {
-    NSLog(@"Testing out the networking singleton for appID");
- //   NSLog(@"Testing out the networking singleton for ”);
-}
-
 - (AFHTTPSessionManager*)getNetworkingManager {
-    if (self.networkingManager == nil) {
-        self.networkingManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BASE_URL]];
-
-        self.networkingManager.securityPolicy = [self getSecurityPolicy];
-    }
-    return self.networkingManager;
-}
-
-- (AFHTTPSessionManager*)getNetworkingManager1 {
     if (self.networkingManager == nil) {
         self.networkingManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BASE_URL]];
         self.networkingManager.securityPolicy = [self getSecurityPolicy];
@@ -78,40 +68,36 @@ static NetworkManager *sharedManager = nil;
     return @"Server Error. Please try again later";
 }
 
-- (void)getCountriesForRegion:(NSString *) region success:(NetworkManagerSuccess)success failure:(NetworkManagerFailure)failure {
- //   [self showProgressHUD];
-    ///region/europe?fields=name;capital;callingCodes;subregion;latlng;population;flag
-    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObject:@"name;capital;callingCodes;subregion;latlng;population;flag" forKey:@"fields"];
-    [[self getNetworkingManager] GET:[NSString stringWithFormat:@"region/%@", region] parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
- //       [self hideProgressHUD];
-        if (success != nil) {
-            success(responseObject);
-        }
-    } failure:^(NSURLSessionTask *operation, NSError *error) {
-//        [self hideProgressHUD];
-        NSString *errorMessage = [self getError:error];
-        if (failure != nil) {
-            failure(errorMessage, ((NSHTTPURLResponse*)operation.response).statusCode);
-        }
-    }];
-}
-
-- (void)getCountriesForNewRegion:(NSString *) region success:(NetworkManagerSuccess)success failure:(NetworkManagerFailure)failure{
-    [[self getNetworkingManager1] GET:[NSString stringWithFormat:@"Country/getCountries"] parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-        //       [self hideProgressHUD];
-        if (success != nil) {
-            success(responseObject);
-        }
-    } failure:^(NSURLSessionTask *operation, NSError *error) {
-        //        [self hideProgressHUD];
-        NSString *errorMessage = [self getError:error];
-        if (failure != nil) {
-            failure(errorMessage, ((NSHTTPURLResponse*)operation.response).statusCode);
-        }
-    }];
+- (void)getCountriesForRegion:(NSString *) region andSubRegion:(NSString *) subregion success:(NetworkManagerSuccess)success failure:(NetworkManagerFailure)failure{
+    [self showProgressHUD];
     
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:region, @"pRegion", subregion, @"pSubRegion", nil];
+    
+    NSString *urlString = @"Country/getCountries";
+        
+    [[self getNetworkingManager] GET:urlString parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+               [self hideProgressHUD];
+        if (success != nil) {
+            success(responseObject);
+        }
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+                [self hideProgressHUD];
+        NSString *errorMessage = [self getError:error];
+        if (failure != nil) {
+            failure(errorMessage, ((NSHTTPURLResponse*)operation.response).statusCode);
+        }
+    }];
 }
 
+
+- (void)showProgressHUD {
+    [self hideProgressHUD];
+    [SVProgressHUD show];
+}
+
+- (void)hideProgressHUD {
+    [SVProgressHUD dismiss];
+}
 
 
 @end
