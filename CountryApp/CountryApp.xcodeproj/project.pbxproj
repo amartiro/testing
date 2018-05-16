@@ -25,6 +25,9 @@
 		CE0414902065045D00D88DA3 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0414912065045D00D88DA3 /* libAFNetworking.a */; };
 		CE0414952065210A00D88DA3 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0414942065210A00D88DA3 /* Country.m */; };
 		DB3DDAFC05B1FCD9C28542CB /* libPods-CountryApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04874269D0A5603E663FFA25 /* libPods-CountryApp.a */; };
+		E722329820AC86BC0070B84D /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E722329720AC86BC0070B84D /* ProfileViewController.m */; };
+		E722329B20AC87390070B84D /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E722329A20AC87390070B84D /* SplashViewController.m */; };
+		E722329E20AC8A1D0070B84D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E722329D20AC8A1D0070B84D /* RegisterViewController.m */; };
 		E727424B20A1E440007AA844 /* Regions.plist in Resources */ = {isa = PBXBuildFile; fileRef = E727424A20A1E440007AA844 /* Regions.plist */; };
 		E727425120A46835007AA844 /* SubregionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E727425020A46835007AA844 /* SubregionsViewController.m */; };
 		E791A77D20936F5900D1A958 /* CountriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E791A77C20936F5900D1A958 /* CountriesModel.m */; };
@@ -82,6 +85,12 @@
 		CE0414912065045D00D88DA3 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0414932065210A00D88DA3 /* Country.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
 		CE0414942065210A00D88DA3 /* Country.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		E722329620AC86BC0070B84D /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		E722329720AC86BC0070B84D /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		E722329920AC87390070B84D /* SplashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		E722329A20AC87390070B84D /* SplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		E722329C20AC8A1D0070B84D /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		E722329D20AC8A1D0070B84D /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		E727424A20A1E440007AA844 /* Regions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Regions.plist; sourceTree = "<group>"; };
 		E727424F20A46835007AA844 /* SubregionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubregionsViewController.h; sourceTree = "<group>"; };
 		E727425020A46835007AA844 /* SubregionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubregionsViewController.m; sourceTree = "<group>"; };
@@ -176,6 +185,12 @@
 				CE04148B2063EAB300D88DA3 /* RegionsViewController.m */,
 				E727424F20A46835007AA844 /* SubregionsViewController.h */,
 				E727425020A46835007AA844 /* SubregionsViewController.m */,
+				E722329620AC86BC0070B84D /* ProfileViewController.h */,
+				E722329720AC86BC0070B84D /* ProfileViewController.m */,
+				E722329920AC87390070B84D /* SplashViewController.h */,
+				E722329A20AC87390070B84D /* SplashViewController.m */,
+				E722329C20AC8A1D0070B84D /* RegisterViewController.h */,
+				E722329D20AC8A1D0070B84D /* RegisterViewController.m */,
 				E791A7302091CD4000D1A958 /* CustomSplitViewController */,
 				CE0414512060FB3B00D88DA3 /* Assets.xcassets */,
 				CE04144B2060FB3B00D88DA3 /* Main.storyboard */,
@@ -442,7 +457,10 @@
 				E727425120A46835007AA844 /* SubregionsViewController.m in Sources */,
 				CE0414882062A51C00D88DA3 /* CountryTableViewCell.m in Sources */,
 				CE0414502060FB3B00D88DA3 /* CountryApp.xcdatamodeld in Sources */,
+				E722329820AC86BC0070B84D /* ProfileViewController.m in Sources */,
+				E722329B20AC87390070B84D /* SplashViewController.m in Sources */,
 				CE04144A2060FB3B00D88DA3 /* LoginViewController.m in Sources */,
+				E722329E20AC8A1D0070B84D /* RegisterViewController.m in Sources */,
 				E791A77D20936F5900D1A958 /* CountriesModel.m in Sources */,
 				CE0414952065210A00D88DA3 /* Country.m in Sources */,
 				CE0414582060FB3B00D88DA3 /* main.m in Sources */,
