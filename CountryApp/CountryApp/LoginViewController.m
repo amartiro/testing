@@ -12,9 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *countryNameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *capitalNameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *languageTextField;
+@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 
 @property (weak, nonatomic) UITextField *activeTextField;
 

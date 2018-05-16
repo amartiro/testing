@@ -132,13 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CountryApp/DetailsViewController.m"
-            timestampString = "544028617.38008"
+            timestampString = "548193903.672938"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "-showLoaction:andLongitude:"
-            landmarkType = "7">
+            startingLineNumber = "29"
+            endingLineNumber = "29">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
