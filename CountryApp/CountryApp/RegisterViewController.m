@@ -26,9 +26,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
+- (IBAction)backAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:true];
+}
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+  //  [self.navigationController setNavigationBarHidden:false];
     [self registerForKeyboardNotifications];
 }
 
