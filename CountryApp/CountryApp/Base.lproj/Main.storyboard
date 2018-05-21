@@ -24,49 +24,19 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2QG-ab-B6L" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzs-te-VKF">
-                                                <rect key="frame" x="20" y="20" width="335" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="voJ-yy-jPa">
-                                                <rect key="frame" x="20" y="58" width="335" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="6tk-ar-u3A"/>
-                                                </connections>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYW-cB-mt9">
-                                                <rect key="frame" x="20" y="96" width="335" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYW-cB-mt9">
+                                                <rect key="frame" x="20" y="86" width="335" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QOQ-zz-rOF">
-                                                <rect key="frame" x="20" y="134" width="335" height="30"/>
+                                                <rect key="frame" x="20" y="114.5" width="335" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ibt-Nj-xrF"/>
-                                                </connections>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eph-e5-Xe4">
-                                                <rect key="frame" x="19.5" y="172" width="335.5" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MC6-Tv-0EM">
-                                                <rect key="frame" x="19.5" y="210" width="335.5" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="H2C-uj-wJT"/>
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49y-sk-xXu">
@@ -85,36 +55,41 @@
                                                     <segue destination="aG6-lR-CC8" kind="show" id="JwY-Sp-0g6"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BV-9p-NEf">
+                                                <rect key="frame" x="20" y="20" width="335" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oms-Fl-feY">
+                                                <rect key="frame" x="20" y="48.5" width="335" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3Ri-fz-723"/>
+                                                </connections>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.37056236770000001" green="1" blue="0.41997475179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="jzs-te-VKF" firstAttribute="top" secondItem="2QG-ab-B6L" secondAttribute="top" constant="20" symbolic="YES" id="2K3-Zh-qe8"/>
+                                            <constraint firstItem="oms-Fl-feY" firstAttribute="width" secondItem="QOQ-zz-rOF" secondAttribute="width" id="2cS-wO-CxE"/>
                                             <constraint firstItem="rYW-cB-mt9" firstAttribute="leading" secondItem="2QG-ab-B6L" secondAttribute="leading" constant="20" symbolic="YES" id="4Bk-f1-IRn"/>
-                                            <constraint firstItem="rYW-cB-mt9" firstAttribute="top" secondItem="voJ-yy-jPa" secondAttribute="bottom" constant="8" symbolic="YES" id="8Ty-W0-PJ8"/>
-                                            <constraint firstItem="Eph-e5-Xe4" firstAttribute="top" secondItem="QOQ-zz-rOF" secondAttribute="bottom" constant="8" symbolic="YES" id="AI5-kv-9O7"/>
-                                            <constraint firstItem="Eph-e5-Xe4" firstAttribute="height" secondItem="jzs-te-VKF" secondAttribute="height" id="Hq4-o6-gZr"/>
-                                            <constraint firstItem="MC6-Tv-0EM" firstAttribute="leading" secondItem="2QG-ab-B6L" secondAttribute="leading" constant="20" symbolic="YES" id="IBf-4G-p15"/>
+                                            <constraint firstItem="49y-sk-xXu" firstAttribute="top" secondItem="QOQ-zz-rOF" secondAttribute="bottom" constant="103.5" id="A62-Lm-RCg"/>
+                                            <constraint firstItem="7BV-9p-NEf" firstAttribute="top" secondItem="2QG-ab-B6L" secondAttribute="top" constant="20" symbolic="YES" id="KIB-Xk-TPn"/>
+                                            <constraint firstItem="7BV-9p-NEf" firstAttribute="leading" secondItem="2QG-ab-B6L" secondAttribute="leading" constant="20" symbolic="YES" id="LVd-N5-Yxx"/>
                                             <constraint firstItem="QOQ-zz-rOF" firstAttribute="top" secondItem="rYW-cB-mt9" secondAttribute="bottom" constant="8" symbolic="YES" id="MDi-Jm-nvN"/>
-                                            <constraint firstAttribute="trailing" secondItem="jzs-te-VKF" secondAttribute="trailing" constant="20" symbolic="YES" id="S6R-pM-aZv"/>
+                                            <constraint firstItem="rYW-cB-mt9" firstAttribute="top" secondItem="oms-Fl-feY" secondAttribute="bottom" constant="8" symbolic="YES" id="R4a-Gp-7ih"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ymr-IB-X97" secondAttribute="bottom" constant="20" symbolic="YES" id="TCL-Jw-rZQ"/>
                                             <constraint firstAttribute="trailing" secondItem="QOQ-zz-rOF" secondAttribute="trailing" constant="20" symbolic="YES" id="UT9-aL-FZc"/>
-                                            <constraint firstItem="voJ-yy-jPa" firstAttribute="top" secondItem="jzs-te-VKF" secondAttribute="bottom" constant="8" symbolic="YES" id="Uvw-Ld-tQB"/>
-                                            <constraint firstItem="jzs-te-VKF" firstAttribute="leading" secondItem="2QG-ab-B6L" secondAttribute="leading" constant="20" symbolic="YES" id="W5z-ie-MwL"/>
-                                            <constraint firstItem="voJ-yy-jPa" firstAttribute="height" secondItem="jzs-te-VKF" secondAttribute="height" id="cOV-uz-akQ"/>
+                                            <constraint firstItem="7BV-9p-NEf" firstAttribute="width" secondItem="rYW-cB-mt9" secondAttribute="width" id="WLD-6W-YqL"/>
                                             <constraint firstItem="QOQ-zz-rOF" firstAttribute="leading" secondItem="2QG-ab-B6L" secondAttribute="leading" constant="20" symbolic="YES" id="e6W-1C-KaB"/>
-                                            <constraint firstItem="MC6-Tv-0EM" firstAttribute="height" secondItem="jzs-te-VKF" secondAttribute="height" id="fQr-45-MgZ"/>
-                                            <constraint firstItem="voJ-yy-jPa" firstAttribute="leading" secondItem="2QG-ab-B6L" secondAttribute="leading" constant="20" symbolic="YES" id="h1e-4g-4hU"/>
+                                            <constraint firstItem="oms-Fl-feY" firstAttribute="top" secondItem="7BV-9p-NEf" secondAttribute="bottom" constant="8" symbolic="YES" id="eBP-9e-Svh"/>
+                                            <constraint firstItem="oms-Fl-feY" firstAttribute="leading" secondItem="2QG-ab-B6L" secondAttribute="leading" constant="20" symbolic="YES" id="g1R-lr-N1R"/>
                                             <constraint firstAttribute="trailing" secondItem="rYW-cB-mt9" secondAttribute="trailing" constant="20" symbolic="YES" id="hBs-4o-NOY"/>
-                                            <constraint firstItem="Eph-e5-Xe4" firstAttribute="leading" secondItem="2QG-ab-B6L" secondAttribute="leading" constant="20" symbolic="YES" id="hny-V1-in1"/>
-                                            <constraint firstItem="QOQ-zz-rOF" firstAttribute="height" secondItem="jzs-te-VKF" secondAttribute="height" id="jLS-rB-CPn"/>
                                             <constraint firstItem="49y-sk-xXu" firstAttribute="centerX" secondItem="2QG-ab-B6L" secondAttribute="centerX" id="jiB-bf-wAa"/>
                                             <constraint firstItem="ymr-IB-X97" firstAttribute="centerX" secondItem="2QG-ab-B6L" secondAttribute="centerX" id="k1L-PD-e6P"/>
-                                            <constraint firstItem="MC6-Tv-0EM" firstAttribute="top" secondItem="Eph-e5-Xe4" secondAttribute="bottom" constant="8" symbolic="YES" id="o6U-hh-gYL"/>
-                                            <constraint firstAttribute="trailing" secondItem="voJ-yy-jPa" secondAttribute="trailing" constant="20" symbolic="YES" id="oPM-ct-eh8"/>
-                                            <constraint firstAttribute="trailing" secondItem="Eph-e5-Xe4" secondAttribute="trailing" constant="20" symbolic="YES" id="pGY-br-K0H"/>
-                                            <constraint firstItem="49y-sk-xXu" firstAttribute="top" secondItem="MC6-Tv-0EM" secondAttribute="bottom" constant="8" symbolic="YES" id="pxv-wN-XBn"/>
-                                            <constraint firstAttribute="trailing" secondItem="MC6-Tv-0EM" secondAttribute="trailing" constant="20" symbolic="YES" id="qT5-br-g2g"/>
-                                            <constraint firstItem="rYW-cB-mt9" firstAttribute="height" secondItem="jzs-te-VKF" secondAttribute="height" id="tBC-7i-jPk"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7BV-9p-NEf" secondAttribute="trailing" constant="20" symbolic="YES" id="pAM-bT-Vsb"/>
                                             <constraint firstItem="ymr-IB-X97" firstAttribute="top" secondItem="49y-sk-xXu" secondAttribute="bottom" constant="8" symbolic="YES" id="wni-d5-ezE"/>
                                         </constraints>
                                     </view>
@@ -140,9 +115,8 @@
                     </view>
                     <connections>
                         <outlet property="contentScrollView" destination="uKR-IW-SAa" id="b11-Kf-HaU"/>
-                        <outlet property="firstNameTextField" destination="voJ-yy-jPa" id="9zz-sG-Slf"/>
-                        <outlet property="lastNameTextField" destination="QOQ-zz-rOF" id="Aww-sf-kxI"/>
-                        <outlet property="userNameTextField" destination="MC6-Tv-0EM" id="WN7-zT-Rt1"/>
+                        <outlet property="passwordTextField" destination="QOQ-zz-rOF" id="3ga-D4-xW8"/>
+                        <outlet property="userNameTextField" destination="oms-Fl-feY" id="EE5-57-GwV"/>
                         <segue destination="wSH-Cj-zXX" kind="presentation" identifier="registrationToMenu" id="3KK-OM-yUk"/>
                     </connections>
                 </viewController>

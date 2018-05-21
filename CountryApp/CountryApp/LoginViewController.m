@@ -8,12 +8,14 @@
 
 #import "LoginViewController.h"
 #import "UIViewController+ErrorHandler.h"
+#import "Helper.h"
+#import "AccountManager.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
-@property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+
 
 @property (weak, nonatomic) UITextField *activeTextField;
 
@@ -54,11 +56,22 @@
 }
 
 - (IBAction)loginAction:(id)sender {
-    if (self.userNameTextField.text.length < 3) {
-        [self showAlertWithTitle:@"Information" andDesctiption:@"Username must contain atleast 3 characters." andComplition:nil];
+    NSString * username = self.userNameTextField.text;
+    if (![Helper isValidUsername:username]) {
+        [self showAlertWithTitle:@"Information" andDesctiption:@"Please enter valid username." andComplition:nil];
         return;
     }
     
+    NSString * pass = self.passwordTextField.text;
+    if (![Helper isValidPassword:pass]) {
+        [self showAlertWithTitle:@"Information" andDesctiption:@"Please enter valid password." andComplition:nil];
+        return;
+    }
+    
+    if (![[AccountManager sharedManager] accountExistWithUsername:username andPassword:pass]) {
+        [self showAlertWithTitle:@"Information" andDesctiption:@"Account doesn't exist" andComplition:nil];
+        return;
+    }
     
      
    [self performSegueWithIdentifier:@"registrationToMenu" sender:nil];

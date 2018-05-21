@@ -34,6 +34,8 @@
 		E791A77D20936F5900D1A958 /* CountriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E791A77C20936F5900D1A958 /* CountriesModel.m */; };
 		E79333BD207B836F00201D60 /* CustomSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79333BC207B836F00201D60 /* CustomSplitViewController.m */; };
 		E7FF0AE520B2E5B100148902 /* UIViewController+ErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FF0AE420B2E5B100148902 /* UIViewController+ErrorHandler.m */; };
+		E7FF0AE820B2F38800148902 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FF0AE720B2F38800148902 /* Helper.m */; };
+		E7FF0AEB20B3149C00148902 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FF0AEA20B3149C00148902 /* AccountManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,10 @@
 		E79333BC207B836F00201D60 /* CustomSplitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomSplitViewController.m; sourceTree = "<group>"; };
 		E7FF0AE320B2E5B100148902 /* UIViewController+ErrorHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ErrorHandler.h"; sourceTree = "<group>"; };
 		E7FF0AE420B2E5B100148902 /* UIViewController+ErrorHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ErrorHandler.m"; sourceTree = "<group>"; };
+		E7FF0AE620B2F38800148902 /* Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		E7FF0AE720B2F38800148902 /* Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		E7FF0AE920B3149C00148902 /* AccountManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AccountManager.h; path = AccountManager/AccountManager.h; sourceTree = "<group>"; };
+		E7FF0AEA20B3149C00148902 /* AccountManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AccountManager.m; path = AccountManager/AccountManager.m; sourceTree = "<group>"; };
 		E91F23B30EB07C1A033F18E1 /* Pods-CountryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountryApp/Pods-CountryApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +218,10 @@
 				CE0197ED20B0085000F8F26C /* ErrorHandler.m */,
 				E7FF0AE320B2E5B100148902 /* UIViewController+ErrorHandler.h */,
 				E7FF0AE420B2E5B100148902 /* UIViewController+ErrorHandler.m */,
+				E7FF0AE620B2F38800148902 /* Helper.h */,
+				E7FF0AE720B2F38800148902 /* Helper.m */,
+				E7FF0AE920B3149C00148902 /* AccountManager.h */,
+				E7FF0AEA20B3149C00148902 /* AccountManager.m */,
 			);
 			path = CountryApp;
 			sourceTree = "<group>";
@@ -472,7 +482,9 @@
 				E722329B20AC87390070B84D /* SplashViewController.m in Sources */,
 				CE04144A2060FB3B00D88DA3 /* LoginViewController.m in Sources */,
 				E722329E20AC8A1D0070B84D /* RegisterViewController.m in Sources */,
+				E7FF0AE820B2F38800148902 /* Helper.m in Sources */,
 				E791A77D20936F5900D1A958 /* CountriesModel.m in Sources */,
+				E7FF0AEB20B3149C00148902 /* AccountManager.m in Sources */,
 				CE0414952065210A00D88DA3 /* Country.m in Sources */,
 				CE0414582060FB3B00D88DA3 /* main.m in Sources */,
 				E79333BD207B836F00201D60 /* CustomSplitViewController.m in Sources */,
