@@ -33,6 +33,7 @@
 		E727425120A46835007AA844 /* SubregionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E727425020A46835007AA844 /* SubregionsViewController.m */; };
 		E791A77D20936F5900D1A958 /* CountriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E791A77C20936F5900D1A958 /* CountriesModel.m */; };
 		E79333BD207B836F00201D60 /* CustomSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79333BC207B836F00201D60 /* CustomSplitViewController.m */; };
+		E7FF0AE520B2E5B100148902 /* UIViewController+ErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FF0AE420B2E5B100148902 /* UIViewController+ErrorHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		E791A77C20936F5900D1A958 /* CountriesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountriesModel.m; path = CountriesModel/CountriesModel.m; sourceTree = "<group>"; };
 		E79333BB207B836F00201D60 /* CustomSplitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomSplitViewController.h; sourceTree = "<group>"; };
 		E79333BC207B836F00201D60 /* CustomSplitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomSplitViewController.m; sourceTree = "<group>"; };
+		E7FF0AE320B2E5B100148902 /* UIViewController+ErrorHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ErrorHandler.h"; sourceTree = "<group>"; };
+		E7FF0AE420B2E5B100148902 /* UIViewController+ErrorHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ErrorHandler.m"; sourceTree = "<group>"; };
 		E91F23B30EB07C1A033F18E1 /* Pods-CountryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountryApp/Pods-CountryApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +210,8 @@
 				E791A77C20936F5900D1A958 /* CountriesModel.m */,
 				CE0197EC20B0085000F8F26C /* ErrorHandler.h */,
 				CE0197ED20B0085000F8F26C /* ErrorHandler.m */,
+				E7FF0AE320B2E5B100148902 /* UIViewController+ErrorHandler.h */,
+				E7FF0AE420B2E5B100148902 /* UIViewController+ErrorHandler.m */,
 			);
 			path = CountryApp;
 			sourceTree = "<group>";
@@ -462,6 +467,7 @@
 				E727425120A46835007AA844 /* SubregionsViewController.m in Sources */,
 				CE0414882062A51C00D88DA3 /* CountryTableViewCell.m in Sources */,
 				CE0414502060FB3B00D88DA3 /* CountryApp.xcdatamodeld in Sources */,
+				E7FF0AE520B2E5B100148902 /* UIViewController+ErrorHandler.m in Sources */,
 				E722329820AC86BC0070B84D /* ProfileViewController.m in Sources */,
 				E722329B20AC87390070B84D /* SplashViewController.m in Sources */,
 				CE04144A2060FB3B00D88DA3 /* LoginViewController.m in Sources */,

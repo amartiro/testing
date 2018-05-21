@@ -26,14 +26,16 @@ static ErrorHandler *sharedModel = nil;
     UIAlertController * alertController = [UIAlertController alertControllerWithTitle:title message:desc preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction * okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    
-    UIAlertAction * retryAction = [UIAlertAction actionWithTitle:@"Retry" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        complition();
-    }];
-    
     [alertController addAction:okAction];
-    [alertController addAction:retryAction];
-    
+
+    if (complition != nil) {
+        UIAlertAction * retryAction = [UIAlertAction actionWithTitle:@"Retry" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            complition();
+        }];
+        
+        [alertController addAction:retryAction];
+    }
+
     return alertController;
 }
 

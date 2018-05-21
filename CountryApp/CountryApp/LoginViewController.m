@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#import "ErrorHandler.h"
+#import "UIViewController+ErrorHandler.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
@@ -54,10 +54,14 @@
 }
 
 - (IBAction)loginAction:(id)sender {
-//    [self presentViewController:[ErrorHandler.sharedManager showWithTitle:@"Samo" andDesctiption:@"Abulik" andComplition:^{
-//        NSLog(@"Davitik");
-//    }] animated:true completion:nil];
-    [self performSegueWithIdentifier:@"registrationToMenu" sender:nil];
+    if (self.userNameTextField.text.length < 3) {
+        [self showAlertWithTitle:@"Information" andDesctiption:@"Username must contain atleast 3 characters." andComplition:nil];
+        return;
+    }
+    
+    
+     
+   [self performSegueWithIdentifier:@"registrationToMenu" sender:nil];
 }
 
 
