@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "ErrorHandler.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
@@ -52,6 +53,12 @@
                                                  name:UIKeyboardWillHideNotification object:nil];
 }
 
+- (IBAction)loginAction:(id)sender {
+//    [self presentViewController:[ErrorHandler.sharedManager showWithTitle:@"Samo" andDesctiption:@"Abulik" andComplition:^{
+//        NSLog(@"Davitik");
+//    }] animated:true completion:nil];
+    [self performSegueWithIdentifier:@"registrationToMenu" sender:nil];
+}
 
 
 // Called when the UIKeyboardDidShowNotification is sent.
