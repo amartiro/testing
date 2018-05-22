@@ -6,12 +6,13 @@
 //  Copyright © 2018 Artak. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Account.h"
 
 @interface AccountManager : NSObject
 
 + (id)sharedManager;
 
 - (BOOL) accountExistWithUsername:(NSString *) userName andPassword:(NSString *) pass;
+- (BOOL) registerAccount:(Account *) account;
 
 @end

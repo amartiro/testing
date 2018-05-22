@@ -36,6 +36,7 @@
 		E7FF0AE520B2E5B100148902 /* UIViewController+ErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FF0AE420B2E5B100148902 /* UIViewController+ErrorHandler.m */; };
 		E7FF0AE820B2F38800148902 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FF0AE720B2F38800148902 /* Helper.m */; };
 		E7FF0AEB20B3149C00148902 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FF0AEA20B3149C00148902 /* AccountManager.m */; };
+		E7FF0AEE20B415D900148902 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FF0AED20B415D900148902 /* Account.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,8 @@
 		E7FF0AE720B2F38800148902 /* Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		E7FF0AE920B3149C00148902 /* AccountManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AccountManager.h; path = AccountManager/AccountManager.h; sourceTree = "<group>"; };
 		E7FF0AEA20B3149C00148902 /* AccountManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AccountManager.m; path = AccountManager/AccountManager.m; sourceTree = "<group>"; };
+		E7FF0AEC20B415D900148902 /* Account.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Account.h; path = Account/Account.h; sourceTree = "<group>"; };
+		E7FF0AED20B415D900148902 /* Account.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Account.m; path = Account/Account.m; sourceTree = "<group>"; };
 		E91F23B30EB07C1A033F18E1 /* Pods-CountryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountryApp/Pods-CountryApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -220,6 +223,8 @@
 				E7FF0AE420B2E5B100148902 /* UIViewController+ErrorHandler.m */,
 				E7FF0AE620B2F38800148902 /* Helper.h */,
 				E7FF0AE720B2F38800148902 /* Helper.m */,
+				E7FF0AEC20B415D900148902 /* Account.h */,
+				E7FF0AED20B415D900148902 /* Account.m */,
 				E7FF0AE920B3149C00148902 /* AccountManager.h */,
 				E7FF0AEA20B3149C00148902 /* AccountManager.m */,
 			);
@@ -491,6 +496,7 @@
 				CE0197EE20B0085000F8F26C /* ErrorHandler.m in Sources */,
 				CE04147F206286E400D88DA3 /* DetailsViewController.m in Sources */,
 				CE04147C2062833B00D88DA3 /* CountriesViewController.m in Sources */,
+				E7FF0AEE20B415D900148902 /* Account.m in Sources */,
 				CE04148F2065043900D88DA3 /* NetworkManager.m in Sources */,
 				CE0414472060FB3B00D88DA3 /* AppDelegate.m in Sources */,
 			);

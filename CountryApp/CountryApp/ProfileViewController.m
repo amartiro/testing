@@ -26,7 +26,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.usernameTextField.userInteractionEnabled = false;
 }
+
 - (IBAction)backAction:(id)sender {
     [self.navigationController popViewControllerAnimated:true];
 }
@@ -35,6 +37,10 @@
     [super viewWillAppear:animated];
     //  [self.navigationController setNavigationBarHidden:false];
     [self registerForKeyboardNotifications];
+}
+
+- (IBAction)saveAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:true];
 }
 
 -(void) textFieldDidBeginEditing:(UITextField *)textField{

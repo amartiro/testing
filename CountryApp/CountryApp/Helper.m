@@ -31,6 +31,10 @@
     return true;
 }
 
++(BOOL) isValidCapital:(NSString *) capital{
+    return true;
+}
+
 +(BOOL) isValidLanguage:(NSString *) language{
     return true;
 }

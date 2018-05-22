@@ -24,4 +24,10 @@ static AccountManager *sharedModel = nil;
     return true;
 }
 
+- (BOOL) registerAccount:(Account *) account{
+    return true;
+    
+}
+
+
 @end

@@ -14,6 +14,7 @@
 +(BOOL) isValidLastname:(NSString *) name;
 +(BOOL) isValidPassword:(NSString *) pass;
 +(BOOL) isValidCountry:(NSString *) country;
++(BOOL) isValidCapital:(NSString *) capital;
 +(BOOL) isValidLanguage:(NSString *) language;
 
 
