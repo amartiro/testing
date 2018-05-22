@@ -12,7 +12,7 @@
 
 + (id)sharedManager;
 
-- (BOOL) accountExistWithUsername:(NSString *) userName andPassword:(NSString *) pass;
-- (BOOL) registerAccount:(Account *) account;
+- (BOOL) doesAccountExistWithUsername:(NSString *) userName andPassword:(NSString *) pass;
+- (void) registerAccount:(Account *) account success:(void(^)(void))success failure:(void(^)(NSError *))failure;
 
 @end

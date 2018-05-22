@@ -20,13 +20,12 @@ static AccountManager *sharedModel = nil;
     return sharedModel;
 }
 
-- (BOOL) accountExistWithUsername:(NSString *) userName andPassword:(NSString *) pass{
+- (BOOL) doesAccountExistWithUsername:(NSString *) userName andPassword:(NSString *) pass{
     return true;
 }
 
-- (BOOL) registerAccount:(Account *) account{
-    return true;
-    
+- (void) registerAccount:(Account *) account success:(void(^)(void))success failure:(void(^)(NSError *))failure{
+    success();
 }
 
 

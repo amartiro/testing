@@ -42,54 +42,23 @@
 - (IBAction)registerAction:(id)sender {
     Account * account = [[Account alloc] init];
     account.firstName = self.firstNameTextField.text;
-
-    if (![Helper isValidFirstname:account.firstName]) {
-        [self showAlertWithTitle:@"Information" andDesctiption:@"Please enter valid firstname." andComplition:nil];
-        return;
-    }
-    
     account.lastName = self.lastNameTextField.text;
-    if (![Helper isValidLastname:account.lastName]) {
-        [self showAlertWithTitle:@"Information" andDesctiption:@"Please enter valid lastname." andComplition:nil];
-        return;
-    }
-    
     account.userName = self.usernameTextField.text;
-    if (![Helper isValidUsername:account.userName]) {
-        [self showAlertWithTitle:@"Information" andDesctiption:@"Please enter valid username." andComplition:nil];
-        return;
-    }
-    
     account.password = self.passwordTextField.text;
-    if (![Helper isValidPassword:account.password]) {
-        [self showAlertWithTitle:@"Information" andDesctiption:@"Please enter valid password." andComplition:nil];
-        return;
-    }
-    
     account.country = self.countryNameTextField.text;
-    if (![Helper isValidCountry:account.country]) {
-        [self showAlertWithTitle:@"Information" andDesctiption:@"Please enter valid country." andComplition:nil];
-        return;
-    }
-    
     account.capital = self.capitalNameTextField.text;
-    if (![Helper isValidCapital:account.capital]) {
-        [self showAlertWithTitle:@"Information" andDesctiption:@"Please enter valid capital." andComplition:nil];
-        return;
-    }
-    
     account.language = self.languageTextField.text;
-    if (![Helper isValidLanguage:account.language]) {
-        [self showAlertWithTitle:@"Information" andDesctiption:@"Please enter valid language." andComplition:nil];
+    NSError * error = [Helper validateAccount:account];
+    if (error != nil) {
+        [self showAlertWithTitle:@"Information" andDesctiption:error.localizedDescription andComplition:nil];
         return;
     }
     
-    if (![[AccountManager sharedManager] registerAccount:account]) {
-        [self showAlertWithTitle:@"Information" andDesctiption:@"Account already exists" andComplition:nil];
-        return;
-    }
-    
-     [self performSegueWithIdentifier:@"registrationToMenu" sender:nil];
+    [[AccountManager sharedManager] registerAccount:account success:^{
+        [self performSegueWithIdentifier:@"registrationToMenu" sender:nil];
+    } failure:^(NSError * error) {
+        [self showAlertWithTitle:@"Information" andDesctiption:error.localizedDescription andComplition:nil];
+    }];
 }
 
 

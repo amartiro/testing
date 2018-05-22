@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class Account;
+
 @interface Helper : NSObject
 +(BOOL) isValidUsername:(NSString *) name;
 +(BOOL) isValidFirstname:(NSString *) name;
@@ -16,6 +18,8 @@
 +(BOOL) isValidCountry:(NSString *) country;
 +(BOOL) isValidCapital:(NSString *) capital;
 +(BOOL) isValidLanguage:(NSString *) language;
+
++(NSError *) validateAccount:(Account *) account;
 
 
 
