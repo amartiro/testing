@@ -7,6 +7,7 @@
 //
 
 #import "ProfileViewController.h"
+#import "AccountManager.h"
 
 @interface ProfileViewController ()
 
@@ -27,10 +28,41 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.usernameTextField.userInteractionEnabled = false;
+    NSString * username = [[AccountManager sharedManager] getAccountName];
+
+    [[AccountManager sharedManager] getAccountWithUsername:username success:^(Account * account) {
+        self.usernameTextField.text = account.userName;
+        self.firstNameTextField.text = account.firstName;
+        self.lastNameTextField.text = account.lastName;
+        self.countryNameTextField.text = account.country;
+        self.capitalNameTextField.text = account.capital;
+        self.languageTextField.text = account.language;
+        
+        UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Log Out"
+                                                                            style:UIBarButtonItemStyleDone
+                                                                           target:self
+                                                                           action:@selector(rightButtonAction:)];
+        self.navigationItem.rightBarButtonItem = rightButtonItem;
+        
+    } failure:^(NSError * error) {
+        
+    }];
 }
 
-- (IBAction)backAction:(id)sender {
-    [self.navigationController popViewControllerAnimated:true];
+- (void)rightButtonAction:(id)sender {
+    [[AccountManager sharedManager] removeAccountName];
+    [self dismissViewControllerAnimated:true completion:^{
+        [self.navigationController popToRootViewControllerAnimated:true];
+    }];
+        
+//    NSString * username = [[AccountManager sharedManager] getAccountName];
+//    [[AccountManager sharedManager] deleteAccountWithUsername:username success:^{
+//        [self dismissViewControllerAnimated:true completion:^{
+//            [self.navigationController popToRootViewControllerAnimated:true];
+//        }];
+//    } failure:^(NSError * error) {
+//
+//    }];
 }
 
 -(void) viewWillAppear:(BOOL)animated{

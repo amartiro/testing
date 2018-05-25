@@ -37,6 +37,7 @@
 		E7FF0AE820B2F38800148902 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FF0AE720B2F38800148902 /* Helper.m */; };
 		E7FF0AEB20B3149C00148902 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FF0AEA20B3149C00148902 /* AccountManager.m */; };
 		E7FF0AEE20B415D900148902 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FF0AED20B415D900148902 /* Account.m */; };
+		E7FF0AF020B5C29D00148902 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FF0AEF20B5C29D00148902 /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		E7FF0AEA20B3149C00148902 /* AccountManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AccountManager.m; path = AccountManager/AccountManager.m; sourceTree = "<group>"; };
 		E7FF0AEC20B415D900148902 /* Account.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Account.h; path = Account/Account.h; sourceTree = "<group>"; };
 		E7FF0AED20B415D900148902 /* Account.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Account.m; path = Account/Account.m; sourceTree = "<group>"; };
+		E7FF0AEF20B5C29D00148902 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		E91F23B30EB07C1A033F18E1 /* Pods-CountryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountryApp/Pods-CountryApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7FF0AF020B5C29D00148902 /* Security.framework in Frameworks */,
 				CE0414902065045D00D88DA3 /* libAFNetworking.a in Frameworks */,
 				DB3DDAFC05B1FCD9C28542CB /* libPods-CountryApp.a in Frameworks */,
 			);
@@ -146,6 +149,7 @@
 		38BBC742AEF870A81132A7DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7FF0AEF20B5C29D00148902 /* Security.framework */,
 				CE0414912065045D00D88DA3 /* libAFNetworking.a */,
 				04874269D0A5603E663FFA25 /* libPods-CountryApp.a */,
 			);
@@ -460,10 +464,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CountryApp/Pods-CountryApp-resources.sh",
+				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

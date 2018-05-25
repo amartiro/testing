@@ -7,6 +7,7 @@
 //
 
 #import "SplashViewController.h"
+#import "AccountManager.h"
 
 @interface SplashViewController ()
 
@@ -17,8 +18,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if ([[AccountManager sharedManager] getAccountName] != nil) {
+        [self openMenuScreen];
+    } else {
+        [self registrationScreen];
+    }
+}
+
+-(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     
-    [self performSelector:@selector(registrationScreen) withObject:nil afterDelay:2.0f];
+    if ([[AccountManager sharedManager] getAccountName] != nil) {
+        [self openMenuScreen];
+    } else {
+        [self registrationScreen];
+    }
 }
 
 -(void) registrationScreen {

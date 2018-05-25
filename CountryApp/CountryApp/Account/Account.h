@@ -18,4 +18,7 @@
 @property (nonatomic, strong) NSString * capital;
 @property (nonatomic, strong) NSString * language;
 
++(Account *) parseAccount:(NSDictionary *) dict;
++(NSDictionary *) getDictionaryofAccount:(Account *) account;
+
 @end

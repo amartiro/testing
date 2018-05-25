@@ -68,13 +68,13 @@
         return;
     }
     
-    if (![[AccountManager sharedManager] accountExistWithUsername:username andPassword:pass]) {
+    if (![[AccountManager sharedManager] doesAccountExistWithUsername:username andPassword:pass]) {
         [self showAlertWithTitle:@"Information" andDesctiption:@"Account doesn't exist" andComplition:nil];
         return;
     }
     
-     
-   [self performSegueWithIdentifier:@"registrationToMenu" sender:nil];
+    [[AccountManager sharedManager] setAccountName:username];
+    [self performSegueWithIdentifier:@"registrationToMenu" sender:nil];
 }
 
 

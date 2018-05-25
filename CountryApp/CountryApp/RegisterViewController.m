@@ -55,6 +55,7 @@
     }
     
     [[AccountManager sharedManager] registerAccount:account success:^{
+        [[AccountManager sharedManager] setAccountName:account.userName];
         [self performSegueWithIdentifier:@"registrationToMenu" sender:nil];
     } failure:^(NSError * error) {
         [self showAlertWithTitle:@"Information" andDesctiption:error.localizedDescription andComplition:nil];
