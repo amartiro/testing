@@ -17,6 +17,7 @@
 
 #import <SVProgressHUD.h>
 #import <UIKit+AFNetworking.h>
+#import "UIViewController+ErrorHandler.h"
 
 @interface CountriesViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *countriesTableView;
@@ -40,15 +41,22 @@
 
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
 
-    [[CountriesModel sharedManager] getCountriesForRegion:self.region andSubRegion:self.subregion  success:^(NSArray<Country *> *countries) {
+    [self getCountries];
+    
+}
+
+-(void) getCountries {
+    [ [CountriesModel sharedManager] getCountriesForRegion:self.region andSubRegion:self.subregion  success:^(NSArray<Country *> *countries) {
         [self.countries removeAllObjects];
         [self.countries addObjectsFromArray:countries];
         [self.countriesTableView reloadData];
     } failure:^(NSString *failureReason, NSInteger statusCode) {
-        
-    }];
+        [self showAlertWithTitle:@"Error" andDesctiption:@"Network Error" andComplition:^{
+            [self getCountries];
+        }];
+    }] ;
+    
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
