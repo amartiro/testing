@@ -29,6 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.contentScrollView.bounces = NO;
 }
 - (IBAction)backAction:(id)sender {
     [self.navigationController popViewControllerAnimated:true];

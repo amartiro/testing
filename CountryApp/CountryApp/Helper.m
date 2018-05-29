@@ -86,7 +86,19 @@
     }
     
     return nil;
-    
 }
+
++(NSError *) validateUsername:(NSString *) username andPassword:(NSString *) pass{
+    if (![Helper isValidUsername:username]) {
+        return [Helper getError:@"Please enter valid username."];
+    }
+    
+    if (![Helper isValidPassword:pass]) {
+        return [Helper getError:@"Please enter valid password."];
+    }
+
+    return nil;
+}
+
 
 @end

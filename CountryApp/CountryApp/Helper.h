@@ -20,6 +20,7 @@
 +(BOOL) isValidLanguage:(NSString *) language;
 
 +(NSError *) validateAccount:(Account *) account;
++(NSError *) validateUsername:(NSString *) username andPassword:(NSString *) pass;
 
 
 

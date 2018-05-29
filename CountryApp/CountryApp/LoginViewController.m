@@ -56,15 +56,13 @@
 }
 
 - (IBAction)loginAction:(id)sender {
-    NSString * username = self.userNameTextField.text;
-    if (![Helper isValidUsername:username]) {
-        [self showAlertWithTitle:@"Information" andDesctiption:@"Please enter valid username." andComplition:nil];
-        return;
-    }
-    
+    NSString * username = self.userNameTextField.text;    
     NSString * pass = self.passwordTextField.text;
-    if (![Helper isValidPassword:pass]) {
-        [self showAlertWithTitle:@"Information" andDesctiption:@"Please enter valid password." andComplition:nil];
+    
+    NSError * error = [Helper validateUsername:username andPassword:pass];
+    
+    if (error != nil) {
+        [self showAlertWithTitle:@"Information" andDesctiption:error.localizedDescription andComplition:nil];
         return;
     }
     
