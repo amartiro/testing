@@ -1,39 +1,68 @@
 //
-//  LoginViewController.m
+//  RegisterViewController.m
 //  CountryApp
 //
-//  Created by Artak on 3/20/18.
+//  Created by Artak Martirosyan on 5/16/18.
 //  Copyright © 2018 Artak. All rights reserved.
 //
 
-#import "LoginViewController.h"
-#import "UIViewController+ErrorHandler.h"
+#import "RegisterViewController.h"
 #import "Helper.h"
+#import "UIViewController+ErrorHandler.h"
 #import "AccountManager.h"
 
-@interface LoginViewController ()
+@interface RegisterViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
-@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-
+@property (weak, nonatomic) IBOutlet UITextField *countryNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *capitalNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *languageTextField;
 
 @property (weak, nonatomic) UITextField *activeTextField;
 
 @end
 
-
-
-@implementation LoginViewController
+@implementation RegisterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.contentScrollView.bounces = NO;
+}
+- (IBAction)backAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:true];
 }
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:true];
-    [self registerForKeyboardNotifications]; 
+  //  [self.navigationController setNavigationBarHidden:false];
+    [self registerForKeyboardNotifications];
 }
+- (IBAction)registerAction:(id)sender {
+    Account * account = [[Account alloc] init];
+    account.firstName = self.firstNameTextField.text;
+    account.lastName = self.lastNameTextField.text;
+    account.userName = self.usernameTextField.text;
+    account.password = self.passwordTextField.text;
+    account.country = self.countryNameTextField.text;
+    account.capital = self.capitalNameTextField.text;
+    account.language = self.languageTextField.text;
+    NSError * error = [Helper validateAccount:account];
+    if (error != nil) {
+        [self showAlertWithTitle:@"Information" andDesctiption:error.localizedDescription andComplition:nil];
+        return;
+    }
+    
+    [[AccountManager sharedManager] registerAccount:account success:^{
+        [[AccountManager sharedManager] setAccountName:account.userName];
+        [self performSegueWithIdentifier:@"registrationToMenu" sender:nil];
+    } failure:^(NSError * error) {
+        [self showAlertWithTitle:@"Information" andDesctiption:error.localizedDescription andComplition:nil];
+    }];
+}
+
 
 -(void) textFieldDidBeginEditing:(UITextField *)textField{
     self.activeTextField = textField;
@@ -55,25 +84,6 @@
                                                  name:UIKeyboardWillHideNotification object:nil];
 }
 
-- (IBAction)loginAction:(id)sender {
-    NSString * username = self.userNameTextField.text;    
-    NSString * pass = self.passwordTextField.text;
-    
-    NSError * error = [Helper validateUsername:username andPassword:pass];
-    
-    if (error != nil) {
-        [self showAlertWithTitle:@"Information" andDesctiption:error.localizedDescription andComplition:nil];
-        return;
-    }
-    
-    if (![[AccountManager sharedManager] doesAccountExistWithUsername:username andPassword:pass]) {
-        [self showAlertWithTitle:@"Information" andDesctiption:@"Account doesn't exist" andComplition:nil];
-        return;
-    }
-    
-    [[AccountManager sharedManager] setAccountName:username];
-    [self performSegueWithIdentifier:@"registrationToMenu" sender:nil];
-}
 
 
 // Called when the UIKeyboardDidShowNotification is sent.
@@ -86,7 +96,7 @@
     _contentScrollView.scrollIndicatorInsets = contentInsets;
     
     CGRect visibleRect = CGRectMake(_activeTextField.frame.origin.x, _activeTextField.frame.origin.y - 1.1 * _activeTextField.frame.size.height, _activeTextField.frame.size.width, 2.1 * _activeTextField.frame.size.height);
-   
+    
     [_contentScrollView scrollRectToVisible:visibleRect animated:true];
 }
 
@@ -101,6 +111,4 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
-
 @end

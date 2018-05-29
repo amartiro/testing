@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0197EE20B0085000F8F26C /* ErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0197ED20B0085000F8F26C /* ErrorHandler.m */; };
 		CE0414472060FB3B00D88DA3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0414462060FB3B00D88DA3 /* AppDelegate.m */; };
 		CE04144A2060FB3B00D88DA3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0414492060FB3B00D88DA3 /* LoginViewController.m */; };
 		CE04144D2060FB3B00D88DA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE04144B2060FB3B00D88DA3 /* Main.storyboard */; };
@@ -25,10 +26,18 @@
 		CE0414902065045D00D88DA3 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0414912065045D00D88DA3 /* libAFNetworking.a */; };
 		CE0414952065210A00D88DA3 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0414942065210A00D88DA3 /* Country.m */; };
 		DB3DDAFC05B1FCD9C28542CB /* libPods-CountryApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04874269D0A5603E663FFA25 /* libPods-CountryApp.a */; };
+		E722329820AC86BC0070B84D /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E722329720AC86BC0070B84D /* ProfileViewController.m */; };
+		E722329B20AC87390070B84D /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E722329A20AC87390070B84D /* SplashViewController.m */; };
+		E722329E20AC8A1D0070B84D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E722329D20AC8A1D0070B84D /* RegisterViewController.m */; };
 		E727424B20A1E440007AA844 /* Regions.plist in Resources */ = {isa = PBXBuildFile; fileRef = E727424A20A1E440007AA844 /* Regions.plist */; };
 		E727425120A46835007AA844 /* SubregionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E727425020A46835007AA844 /* SubregionsViewController.m */; };
 		E791A77D20936F5900D1A958 /* CountriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E791A77C20936F5900D1A958 /* CountriesModel.m */; };
 		E79333BD207B836F00201D60 /* CustomSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79333BC207B836F00201D60 /* CustomSplitViewController.m */; };
+		E7FF0AE520B2E5B100148902 /* UIViewController+ErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FF0AE420B2E5B100148902 /* UIViewController+ErrorHandler.m */; };
+		E7FF0AE820B2F38800148902 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FF0AE720B2F38800148902 /* Helper.m */; };
+		E7FF0AEB20B3149C00148902 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FF0AEA20B3149C00148902 /* AccountManager.m */; };
+		E7FF0AEE20B415D900148902 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FF0AED20B415D900148902 /* Account.m */; };
+		E7FF0AF020B5C29D00148902 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FF0AEF20B5C29D00148902 /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +60,8 @@
 /* Begin PBXFileReference section */
 		04874269D0A5603E663FFA25 /* libPods-CountryApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CountryApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A5C2231856D89DD76681E8B /* Pods-CountryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CountryApp/Pods-CountryApp.debug.xcconfig"; sourceTree = "<group>"; };
+		CE0197EC20B0085000F8F26C /* ErrorHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ErrorHandler.h; path = ErrorHandler/ErrorHandler.h; sourceTree = "<group>"; };
+		CE0197ED20B0085000F8F26C /* ErrorHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ErrorHandler.m; path = ErrorHandler/ErrorHandler.m; sourceTree = "<group>"; };
 		CE0414422060FB3B00D88DA3 /* CountryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0414452060FB3B00D88DA3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE0414462060FB3B00D88DA3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -82,6 +93,12 @@
 		CE0414912065045D00D88DA3 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0414932065210A00D88DA3 /* Country.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
 		CE0414942065210A00D88DA3 /* Country.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		E722329620AC86BC0070B84D /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		E722329720AC86BC0070B84D /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		E722329920AC87390070B84D /* SplashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		E722329A20AC87390070B84D /* SplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		E722329C20AC8A1D0070B84D /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		E722329D20AC8A1D0070B84D /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		E727424A20A1E440007AA844 /* Regions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Regions.plist; sourceTree = "<group>"; };
 		E727424F20A46835007AA844 /* SubregionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubregionsViewController.h; sourceTree = "<group>"; };
 		E727425020A46835007AA844 /* SubregionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubregionsViewController.m; sourceTree = "<group>"; };
@@ -89,6 +106,15 @@
 		E791A77C20936F5900D1A958 /* CountriesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountriesModel.m; path = CountriesModel/CountriesModel.m; sourceTree = "<group>"; };
 		E79333BB207B836F00201D60 /* CustomSplitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomSplitViewController.h; sourceTree = "<group>"; };
 		E79333BC207B836F00201D60 /* CustomSplitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomSplitViewController.m; sourceTree = "<group>"; };
+		E7FF0AE320B2E5B100148902 /* UIViewController+ErrorHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ErrorHandler.h"; sourceTree = "<group>"; };
+		E7FF0AE420B2E5B100148902 /* UIViewController+ErrorHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ErrorHandler.m"; sourceTree = "<group>"; };
+		E7FF0AE620B2F38800148902 /* Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		E7FF0AE720B2F38800148902 /* Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		E7FF0AE920B3149C00148902 /* AccountManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AccountManager.h; path = AccountManager/AccountManager.h; sourceTree = "<group>"; };
+		E7FF0AEA20B3149C00148902 /* AccountManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AccountManager.m; path = AccountManager/AccountManager.m; sourceTree = "<group>"; };
+		E7FF0AEC20B415D900148902 /* Account.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Account.h; path = Account/Account.h; sourceTree = "<group>"; };
+		E7FF0AED20B415D900148902 /* Account.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Account.m; path = Account/Account.m; sourceTree = "<group>"; };
+		E7FF0AEF20B5C29D00148902 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		E91F23B30EB07C1A033F18E1 /* Pods-CountryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountryApp/Pods-CountryApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7FF0AF020B5C29D00148902 /* Security.framework in Frameworks */,
 				CE0414902065045D00D88DA3 /* libAFNetworking.a in Frameworks */,
 				DB3DDAFC05B1FCD9C28542CB /* libPods-CountryApp.a in Frameworks */,
 			);
@@ -122,6 +149,7 @@
 		38BBC742AEF870A81132A7DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7FF0AEF20B5C29D00148902 /* Security.framework */,
 				CE0414912065045D00D88DA3 /* libAFNetworking.a */,
 				04874269D0A5603E663FFA25 /* libPods-CountryApp.a */,
 			);
@@ -176,6 +204,12 @@
 				CE04148B2063EAB300D88DA3 /* RegionsViewController.m */,
 				E727424F20A46835007AA844 /* SubregionsViewController.h */,
 				E727425020A46835007AA844 /* SubregionsViewController.m */,
+				E722329620AC86BC0070B84D /* ProfileViewController.h */,
+				E722329720AC86BC0070B84D /* ProfileViewController.m */,
+				E722329920AC87390070B84D /* SplashViewController.h */,
+				E722329A20AC87390070B84D /* SplashViewController.m */,
+				E722329C20AC8A1D0070B84D /* RegisterViewController.h */,
+				E722329D20AC8A1D0070B84D /* RegisterViewController.m */,
 				E791A7302091CD4000D1A958 /* CustomSplitViewController */,
 				CE0414512060FB3B00D88DA3 /* Assets.xcassets */,
 				CE04144B2060FB3B00D88DA3 /* Main.storyboard */,
@@ -187,6 +221,16 @@
 				E791A72F2091CD1D00D1A958 /* NetworkManager */,
 				E791A77B20936F5900D1A958 /* CountriesModel.h */,
 				E791A77C20936F5900D1A958 /* CountriesModel.m */,
+				CE0197EC20B0085000F8F26C /* ErrorHandler.h */,
+				CE0197ED20B0085000F8F26C /* ErrorHandler.m */,
+				E7FF0AE320B2E5B100148902 /* UIViewController+ErrorHandler.h */,
+				E7FF0AE420B2E5B100148902 /* UIViewController+ErrorHandler.m */,
+				E7FF0AE620B2F38800148902 /* Helper.h */,
+				E7FF0AE720B2F38800148902 /* Helper.m */,
+				E7FF0AEC20B415D900148902 /* Account.h */,
+				E7FF0AED20B415D900148902 /* Account.m */,
+				E7FF0AE920B3149C00148902 /* AccountManager.h */,
+				E7FF0AEA20B3149C00148902 /* AccountManager.m */,
 			);
 			path = CountryApp;
 			sourceTree = "<group>";
@@ -420,10 +464,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CountryApp/Pods-CountryApp-resources.sh",
+				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,13 +488,21 @@
 				E727425120A46835007AA844 /* SubregionsViewController.m in Sources */,
 				CE0414882062A51C00D88DA3 /* CountryTableViewCell.m in Sources */,
 				CE0414502060FB3B00D88DA3 /* CountryApp.xcdatamodeld in Sources */,
+				E7FF0AE520B2E5B100148902 /* UIViewController+ErrorHandler.m in Sources */,
+				E722329820AC86BC0070B84D /* ProfileViewController.m in Sources */,
+				E722329B20AC87390070B84D /* SplashViewController.m in Sources */,
 				CE04144A2060FB3B00D88DA3 /* LoginViewController.m in Sources */,
+				E722329E20AC8A1D0070B84D /* RegisterViewController.m in Sources */,
+				E7FF0AE820B2F38800148902 /* Helper.m in Sources */,
 				E791A77D20936F5900D1A958 /* CountriesModel.m in Sources */,
+				E7FF0AEB20B3149C00148902 /* AccountManager.m in Sources */,
 				CE0414952065210A00D88DA3 /* Country.m in Sources */,
 				CE0414582060FB3B00D88DA3 /* main.m in Sources */,
 				E79333BD207B836F00201D60 /* CustomSplitViewController.m in Sources */,
+				CE0197EE20B0085000F8F26C /* ErrorHandler.m in Sources */,
 				CE04147F206286E400D88DA3 /* DetailsViewController.m in Sources */,
 				CE04147C2062833B00D88DA3 /* CountriesViewController.m in Sources */,
+				E7FF0AEE20B415D900148902 /* Account.m in Sources */,
 				CE04148F2065043900D88DA3 /* NetworkManager.m in Sources */,
 				CE0414472060FB3B00D88DA3 /* AppDelegate.m in Sources */,
 			);
